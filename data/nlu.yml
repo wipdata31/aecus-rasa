@@ -1,0 +1,284 @@
+version: "3.1"
+nlu:
+- intent: appointment
+  examples: |
+    - appointment
+    - I want to make an appointment
+    - please book an appointment for me
+- intent: greet
+  examples: |
+    - salam
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - let's go
+    - hey dude
+    - good afternoon
+- intent: tell_name
+  examples: |
+    - namehide Dipu.
+    - namehide Shitu.
+    - namehide Soccur.
+    - namehide Noman
+    - namehide Kiron
+- intent: tell_full_name
+  examples: |
+    - fullname Ena.
+    - fullname Bonni.
+    - fullname Kuper.
+    - fullname Kabir
+    - fullname kiron mala
+- intent: tell_dob
+  examples: |
+    - "dateOfBirth 12/12/2013."
+    - "dateOfBirth is 04/01/1997."
+    - "dateOfBirth 1/1/1981."
+    - "19/10/1902"
+- intent: tell_dob_two
+  examples: |
+    - "dobtwo 26/04/1902"
+    - "dobtwo 27/04/1902"
+    - "dobtwo 28/04/1902"
+    - "dobtwo 29/04/1902"
+- intent: tell_icnum
+  examples: |
+    - "icnumber 7438874384."
+    - "icnumber is 43-434-43434."
+    - "icnumber 4343443434."
+    - "12-332-2233"
+    - "icnumber 343-323-2222"
+    - "icnumber 664-323-4422"
+    - "icnumber 343-111-2244"
+    - "icnumber 566-111-2244"
+    - "icnumber 343-111-2244"
+    - "icnumber 555-111-2244"
+    - "icnumber 675-111-2244"
+    - "icnumber 343-111-2244"
+    - "icnumber 343-111-2244"
+    - "icnumber 089-111-2244"
+    - "icnumber 787-111-2244"
+    - "icnumber 787-111-2244"
+    - "icnumber 676-111-2244"
+    - "icnumber 4664-111-2244"
+    - "icnumber 5654-111-2244"
+    - "icnumber 4543-111-2244"
+    - "icnumber 343-111-2244"
+    - "icnumber 444-111-2244"
+    - "icnumber 556-111-2244"
+- intent: tell_icnum_appointment
+  examples: |
+    - "appoiic 7438874384."
+    - "appoiic is 43-434-43434."
+    - "appoiic 4343443434."
+    - "12-332-2233"
+    - "appoiic 3433234-323-2222"
+    - "appoiic 664-323-4422"
+    - "appoiic 3433234-111-2244"
+    - "appoiic 566-111-2244"
+    - "appoiic 3433234-111-2244"
+    - "appoiic 555-111-2244"
+    - "appoiic 675-111-2244"
+    - "appoiic 3433234-111-2244"
+    - "appoiic 343-111-2244"
+    - "appoiic 089-111-2244"
+    - "appoiic 787-111-2244"
+    - "appoiic 787-111-2244"
+    - "appoiic 676-111-2244"
+    - "appoiic 4664-111-2244"
+    - "appoiic 5654-111-2244"
+    - "appoiic 4543-111-2244"
+    - "appoiic 343-111-2244"
+    - "appoiic 444-111-2244"
+    - "appoiic 556-111-2244"
+- intent: tell_email
+  examples: |
+    - "emaill name@gmail.com."
+    - "emaill sabin@opos.com."
+    - "emaill xyz@ymail.com."
+    - "emaill gh@ff.com"
+- intent: tell_symptomp
+  examples: |
+    - symptompp fever.
+    - symptompp Cold.
+    - symptompp Back Pain.
+    - symptompp fever
+- intent: tell_doctor
+  examples: |
+    - "doctorr Dr. Pravash."
+    - "doctorr Dr. Akash"
+    - "doctorr Dr. Pradah"
+    - "doctorr Dr. Haram"
+- intent: tell_scheduledateone
+  examples: |
+    - "scheduleDateonee 01/02/2023 @ 02:12 pm."
+    - "scheduleDateonee 12/03/2023 @ 02:12 am."
+    - "scheduleDateonee 13/04/2023 @ 02:12 am."
+    - "15/04/2023 @ 03:12 am."
+    - "scheduleDateonee 01/02/2023 @ 02:12 pm"
+    - "scheduleDateonee 02/04/2023 @ 02:13 pm"
+- intent: tell_scheduledatetwo
+  examples: |
+    - "scheduleDatetwoo 12/03/2023 @ 02:03 am."
+    - "scheduleDatetwoo 13/03/2023 @ 02:12 am."
+    - "scheduleDatetwoo 01/02/2023 @ 02:12 pm."
+    - "22/04/2023 @ 05:16 pm."
+    - "scheduleDatetwoo 12/03/2023 @ 02:03 am"
+    - "scheduleDatetwoo 30/06/2023 @ 12:03 pm"
+- intent: tell_phone
+  examples: |
+    - number is [+01843727741](phone)
+    - My number is [+01843727741](phone)
+    - My phone number is [4637457382](phone)
+    - [33315327130](phone)
+    - [+83283332838](phone)
+- intent: tell_gender
+  examples: |
+    - [male](gender).
+    - [others](gender).
+    - [female](gender).
+    - [others](gender)
+- intent: tell_nationality
+  examples: |
+    - [malaysian](nationality).
+    - [foreigner](nationality).
+- intent: tell_nationality_two
+  examples: |
+    - ntwo [malaysian](nationality).
+    - ntwo [foreigner](nationality).
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - yap
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - none
+    - no thank you
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - it is not correct
+    - na
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: human_handoff
+  examples: |
+    - i am confused
+    - i dont understand
+    - i want to book an appointment but i dont know whos the doctor
+    - please call me back
+    - I want a human
+    - can I speak to an agent
+    - real agent please
+    - chat with a live agent
+    - give me a person please
+    - i want to talk to a human
+    - can you transfer me to a human?
+    - handoff
+    - i need to talk to a human
+    - human please
+    - i need help from a real human
+    - give me a human
+    - i want a representative
+    - i want to talk to a person
+    - I dont like to talk to a machine
+    - I want to talk to the founders
+    - are there also humans working for your company?
+    - can I speak to a person?
+    - can i please speak to a human?
+    - can you forward me to your team
+    - can you put me in touch with a human?
+    - do you have human support ?
+    - gimme a proper human
+    - give me a human now
+    - human handoff
+    - i dont wanna talk to a bot
+    - i want to speak to a real person
+    - i want to speak to customer service
+    - i want to talk to someone else
+    - i want to talk to someone who is smarter than you
+    - i would like to speak to a person
+    - i'd rather speak with a real rasa employee
+    - id like to talk to a real rasa employee
+    - let me speak with a real person please
+    - let me talk to a human
+    - please give me a human
+    - someone from customer care
+    - speak to a real person
+    - talking to a robot is stupid
+    - that's annoying I'd like to speak to someone real
+    - thats not helping, can i talk to human?
+    - wrong i want to speak to a human
+    - can i speak to your human
+    - i want to chat with human
+    - How do I talk to a human
+    - Can i talk to a human instead
+    - nevermind.... you're not human ... I need to talk to a live person
+    - Can you get a human to assist me?
+    - Can i talk to a human?
+    - Can I speak to a human?
+    - can you hand a conversation over to a human?
+    - i want to speak to human
+    - connect me to a real person
+    - I need a real person
+    - let me speak to a real person please
+- regex: phone
+  examples: |
+    - \d{10,14}
+- regex: tell_dob
+  examples: |
+    - dateOfBirth
+- regex: tell_dob_two
+  examples: |
+    - dobtwo
+- regex: tell_doctor
+  examples: |
+    - doctorr
+- regex: tell_email
+  examples: |
+    - emaill
+- regex: tell_full_name
+  examples: |
+    - fullname
+- regex: tell_icnum
+  examples: |
+    - icnumber
+- regex: tell_icnum_appointment
+  examples: |
+    - appoiic
+- regex: tell_name
+  examples: |
+    - namehide
+- regex: tell_scheduledateone
+  examples: |
+    - scheduleDateonee
+- regex: tell_scheduledatetwo
+  examples: |
+    - scheduleDatetwoo
+- regex: tell_symptomp
+  examples: |
+    - symptompp

@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-gender",
+      "2": "I-gender",
+      "3": "L-gender",
+      "4": "U-gender",
+      "5": "B-nationality",
+      "6": "I-nationality",
+      "7": "L-nationality",
+      "8": "U-nationality",
+      "9": "B-phone",
+      "10": "I-phone",
+      "11": "L-phone",
+      "12": "U-phone",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-gender": 1,
+      "I-gender": 2,
+      "L-gender": 3,
+      "U-gender": 4,
+      "B-nationality": 5,
+      "I-nationality": 6,
+      "L-nationality": 7,
+      "U-nationality": 8,
+      "B-phone": 9,
+      "I-phone": 10,
+      "L-phone": 11,
+      "U-phone": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

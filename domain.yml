@@ -1,0 +1,281 @@
+version: '3.1'
+intents:
+- admission
+- affirm
+- appointment
+- bot_challenge
+- cancel_appointment
+- deny
+- goodbye
+- greet
+- human_handoff
+- proceed
+- reschedule_appointment
+- schedule_new_appointment
+- tell_dob
+- tell_dob_two
+- tell_doctor
+- tell_email
+- tell_full_name
+- tell_gender
+- tell_icnum
+- tell_name
+- tell_phone
+- tell_scheduledateone
+- tell_scheduledatetwo
+- tell_symptomp
+- tell_nationality
+- tell_icnum_appointment
+- tell_nationality_two
+
+entities:
+- gender
+- phone
+- name
+- full_name
+- dob
+- icnum
+- email
+- doctor
+- symptomp
+- scheduledateone
+- scheduledatetwo
+- nationality
+slots:
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
+  full_name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: full_name
+  dob:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: dob
+  icnum:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: icnum
+  gender:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: gender
+  email:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: email
+  phone:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: phone
+  doctor:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: doctor
+  symptomp:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: symptomp
+  scheduledateone:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: scheduledateone
+  scheduledatetwo:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: scheduledatetwo
+  nationality:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: nationality
+responses:
+  utter_ask_name:
+  - text: Hi, Hope you are having a good day. Could we start with your name please?
+  utter_greet:
+  - text: |-
+      Hi {name}
+
+      Welcome to Example Hospital.
+
+      I am your *Virtual Assistant*. Please tap the 'Proceed' button for further assistance.
+    image: https://bernama.com/storage/photos/0ed606deb7433f6f5ace448536772b0360531eda1e2fe
+    buttons:
+    - title: Proceed
+      payload: /proceed
+  utter_Services:
+  - text: 'Please take a moment to select your desired service from the options:'
+    buttons:
+    - title: Appointment
+      payload: /appointment
+    - title: Exit
+      payload: /goodbye
+  utter_appointment_options:
+  - text: Select an option under appointment menu.
+    buttons:
+    - title: Schedule New Appointment
+      payload: /schedule_new_appointment
+    - title: Reschedule Appointment
+      payload: /reschedule_appointment
+    - title: Cancel Appointment
+      payload: /cancel_appointment
+  utter_ask_appointment_cancel_info:
+  - text: |-
+      Please allow us to have at least 1 working day for the arrangement to cancel your appointment.
+
+      For appointment cancellation, we would need to collect the data as below. We will guide you through this process.
+
+      *Patient's full name:*
+      *Date of Birth:*
+      *IC Number (Malaysian)/ Passport Number (Foreigners):* 
+
+      Let's go!
+  utter_appointment_cancel:
+  - text: |-
+      Dear {name}
+
+      Warmest Greeting from Example Hospital.
+
+      Thank you for choosing us as your preferred choice of healthcare service provider.
+
+      As per your request, we have cancelled your appointment.
+  utter_goodbye:
+  - text: |-
+      Warmest Greeting from Example Hospital.
+
+      Thank you for choosing us as your preferred choice of healthcare service provider.
+  utter_iamabot:
+  - text: I'm a virtual assistant here to assist with your KPJ support.
+  utter_handoff:
+  - text: I apologize for any inconvenience caused. Allow me to transfer you to a live agent for further assistance.
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_ask_appointment_info:
+  - text: |-
+      Please allow us to have at least 1 working day for the arrangement to confirm an appointment.
+
+      For appointment bookings, we would need to collect the data as below. We will guide you through this process.
+
+      *Patient's full name:*
+      *Date of Birth:*
+      *IC Number (Malaysian)/ Passport Number (Foreigners):*
+      *Gender:*
+      *Email address:*
+      *Contact Number:*
+      *1st choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_
+      *2nd choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_
+      *Preferred Doctor (if any):*
+      *Medical condition:* 
+
+      Let's go!
+  utter_appointment_confirm:
+  - text: |-
+      Dear {name}
+
+      Warmest Greeting from Example Hospital.
+
+      Thank you for choosing us as your preferred choice of healthcare service provider.
+
+      As per your request, please find below appointment details:
+
+      *Patient's full name:* {full_name}
+      *Attending Doctor:* {doctor}
+      *Appointment Date @ Time:* {scheduledateone}
+      *Insurance Assistant Direct Line:* 03-21600877
+      *Insurance Assistant Fax Line:* 03-27823377
+  utter_ask_full_name:
+  - text: "Could you please provide the patient's full name to start this whole journey?"
+  utter_ask_dob:
+  - text: May I know the patient's date of birth, please? (DD/MM/YYYY)
+  utter_ask_dob_two:
+  - text: Could you kindly provide the patient's date of birth in the format DD/MM/YYYY, please?
+  utter_ask_icnum_appointment:
+  - text: Please provide the patient's IC Number (Malaysian)/ Passport Number (Foreigners) for creating the appointment.
+  utter_ask_icnum:
+  - text: Please provide the patient's IC Number (Malaysian)/ Passport Number (Foreigners).
+  utter_ask_email:
+  - text: Please provide the patient's email address.
+  utter_ask_phone:
+  - text: Please provide the patient's phone number. (Please include country code prefix e.g. +62)
+  utter_ask_doctor:
+  - text: "Does the patient have any preferred doctor? If yes, please provide the name of the doctor."
+  utter_ask_symptomp:
+  - text: Could you please provide some information about the patient's medical condition?
+  utter_ask_gender:
+  - text: Please indicate the patient's gender.
+    buttons:
+    - title: Male
+      payload: male
+    - title: Female
+      payload: female
+    - title: Others
+      payload: others
+  utter_ask_nationality:
+  - text: Please indicate the patient's nationality.
+    buttons:
+    - title: Malaysian
+      payload: malaysian
+    - title: Foreigner
+      payload: foreigner
+  utter_ask_nationality_two:
+  - text: Please select the patient's nationality from the following options.
+    buttons:
+    - title: Malaysian
+      payload: malaysian
+    - title: Foreigner
+      payload: foreigner
+  utter_ask_scheduledateone:
+  - text: When would you like to schedule the appointment? Please provide the preferred date and time.
+  utter_ask_scheduledatetwo:
+  - text: If the preferred schedule is not available, do you have an alternative date and time?
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- action_tell_icnum_appointment
+- action_tell_dob
+- action_tell_dob_two
+- action_tell_doctor
+- action_tell_email
+- action_tell_full_name
+- action_tell_icnum
+- utter_ask_icnum_appointment
+- action_tell_name
+- action_tell_scheduledateone
+- action_tell_scheduledatetwo
+- action_tell_symptomp
+- utter_Services
+- utter_appointment_cancel
+- utter_appointment_confirm
+- utter_appointment_options
+- utter_ask_appointment_cancel_info
+- utter_ask_appointment_info
+- utter_ask_dob
+- utter_ask_dob_two
+- utter_ask_doctor
+- utter_ask_email
+- utter_ask_full_name
+- utter_ask_gender
+- utter_ask_icnum
+- utter_ask_name
+- utter_ask_phone
+- utter_ask_scheduledateone
+- utter_ask_scheduledatetwo
+- utter_ask_symptomp
+- utter_goodbye
+- utter_greet
+- utter_ask_nationality
+- utter_ask_nationality_two

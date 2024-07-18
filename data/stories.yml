@@ -1,0 +1,143 @@
+version: "3.1"
+
+stories:
+
+- story: greet_path_1
+  steps:
+  - intent: greet
+  - action: utter_ask_name
+  - intent: tell_name
+  - action: action_tell_name
+  - slot_was_set:
+    - name: KUTER
+  - action: utter_greet
+
+
+##====appointment story start ======##
+- story: happy_appointment_path
+  steps:
+  - or:
+    - intent: schedule_new_appointment
+    - intent: reschedule_appointment
+  - action: utter_ask_appointment_info
+  - checkpoint: name_and_dob_checkpoint_for_appointment_path
+
+- story: name_and_dob
+  steps:
+  - checkpoint: name_and_dob_checkpoint_for_appointment_path
+  - action: utter_ask_full_name
+  - intent: tell_full_name
+  - action: action_tell_full_name
+  - slot_was_set:
+    - full_name: KIRON MALA
+  - action: utter_ask_dob
+  - intent: tell_dob
+  - action: action_tell_dob
+  - slot_was_set:
+    - dob: 19/04/1902
+  - action: utter_ask_nationality
+  - intent: tell_nationality
+    entities:
+    - nationality: malaysian
+  - slot_was_set:
+    - nationality: malaysian
+  - checkpoint: ic_number_taking_checkpoint
+
+- story: ic_number_taking
+  steps:
+  - checkpoint: ic_number_taking_checkpoint
+  - action: utter_ask_icnum_appointment
+  - intent: tell_icnum_appointment
+  - action: action_tell_icnum_appointment
+  - slot_was_set:
+    - icnum: 960401-33-2222
+  - action: utter_ask_gender
+  - intent: tell_gender
+    entities:
+    - gender: female
+  - slot_was_set:
+    - gender: female
+  - checkpoint: email_phone_checkpoint_for_appointment_path
+
+- story: email_phone
+  steps:
+  - checkpoint: email_phone_checkpoint_for_appointment_path
+  - action: utter_ask_email
+  - intent: tell_email
+  - action: action_tell_email
+  - action: utter_ask_phone
+  - intent: tell_phone
+    entities:
+    - phone: 0896786554
+  - slot_was_set:
+    - phone: 0896786554
+  - checkpoint: continuing_rest_appointment_path 
+
+- story: rest_appointment_path
+  steps:
+  - checkpoint: continuing_rest_appointment_path
+  - action: utter_ask_doctor
+  - intent: tell_doctor
+  - action: action_tell_doctor
+  - slot_was_set:
+    - doctor: 19/04/1902
+  - action: utter_ask_symptomp
+  - intent: tell_symptomp
+  - action: action_tell_symptomp
+  - slot_was_set:
+    - symptomp: 19/04/1902
+  - action: utter_ask_scheduledateone
+  - intent: tell_scheduledateone
+  - action: action_tell_scheduledateone
+  - slot_was_set:
+    - scheduledateone: 19/04/1902
+  - action: utter_ask_scheduledatetwo
+  - intent: tell_scheduledatetwo
+  - action: action_tell_scheduledatetwo
+  - slot_was_set:
+    - scheduledatetwo: 19/04/1902
+  - action: utter_appointment_confirm
+  - action: action_restart
+##====appointment story end ======##
+
+##====cancel appointment story start ======##
+
+- story: cancel_appointment_path
+  steps:
+  - intent: cancel_appointment
+  - action: utter_ask_appointment_cancel_info
+  - checkpoint: name_and_dob_checkpoint_for_cancel_appointment_path
+
+- story: name_and_dob_cancel_appointment_path
+  steps:
+  - checkpoint: name_and_dob_checkpoint_for_cancel_appointment_path
+  - action: utter_ask_full_name
+  - intent: tell_full_name
+  - action: action_tell_full_name
+  - slot_was_set:
+    - full_name: KIRON MALA
+  - action: utter_ask_dob_two
+  - intent: tell_dob_two
+  - action: action_tell_dob_two
+  - slot_was_set:
+    - dob: 19/04/1902
+  - action: utter_ask_nationality_two
+  - intent: tell_nationality_two
+    entities:
+    - nationality: malaysian
+  - slot_was_set:
+    - nationality: malaysian
+  - checkpoint: taking_ic_for_cancel_appointment_pat
+
+- story: ic_number_taking_cancel_appointment_path
+  steps:
+  - checkpoint: taking_ic_for_cancel_appointment_pat
+  - action: utter_ask_icnum
+  - intent: tell_icnum
+  - action: action_tell_icnum
+  - slot_was_set:
+    - icnum: 343-323-2222
+  - action: utter_appointment_cancel
+  - action: action_restart
+
+##====cancel appointment story end ======##
