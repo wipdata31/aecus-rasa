@@ -257,6 +257,7 @@ actions:
 - action_tell_scheduledateone
 - action_tell_scheduledatetwo
 - action_tell_symptomp
+- action_utter_submit
 - utter_Services
 - utter_appointment_cancel
 - utter_appointment_confirm
