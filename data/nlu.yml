@@ -32,16 +32,16 @@ nlu:
     - fullname kiron mala
 - intent: tell_dob
   examples: |
-    - "dateOfBirth 12/12/2013."
-    - "dateOfBirth is 04/01/1997."
-    - "dateOfBirth 1/1/1981."
-    - "19/10/1902"
+    - "dateOfBirth 2013-12-12T01:00:00.000Z."
+    - "dateOfBirth is 1997-04-01T12:00:00.000Z."
+    - "dateOfBirth 1981-01-01T12:00:00.000Z."
+    - "1996-06-06"
 - intent: tell_dob_two
   examples: |
-    - "dobtwo 26/04/1902"
-    - "dobtwo 27/04/1902"
-    - "dobtwo 28/04/1902"
-    - "dobtwo 29/04/1902"
+    - "dobtwo 1902-04-26T12:00:00.000Z"
+    - "dobtwo 1902-04-27T12:00:00.000Z"
+    - "dobtwo 1902-04-28T12:00:00.000Z"
+    - "dobtwo 1902-04-29T12:00:00.000Z"
 - intent: tell_icnum
   examples: |
     - "icnumber 7438874384."
