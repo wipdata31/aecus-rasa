@@ -95,6 +95,7 @@ nlu:
 - intent: tell_email
   examples: |
     - "emaill name@gmail.com."
+    - "emaill name@hotmail.com."
     - "emaill sabin@opos.com."
     - "emaill xyz@ymail.com."
     - "emaill gh@ff.com"
@@ -113,18 +114,18 @@ nlu:
 - intent: tell_scheduledateone
   examples: |
     - "scheduleDateonee 01/02/2023 @ 02:12 pm."
-    - "scheduleDateonee 12/03/2023 @ 02:12 am."
-    - "scheduleDateonee 13/04/2023 @ 02:12 am."
+    - "scheduleDateonee 1902-04-26T12:00:00.000Z."
+    - "scheduleDateonee 1981-01-01T12:00:00.000Z."
     - "15/04/2023 @ 03:12 am."
-    - "scheduleDateonee 01/02/2023 @ 02:12 pm"
+    - "scheduleDateonee 1997-04-01T12:00:00.000Z"
     - "scheduleDateonee 02/04/2023 @ 02:13 pm"
 - intent: tell_scheduledatetwo
   examples: |
-    - "scheduleDatetwoo 12/03/2023 @ 02:03 am."
-    - "scheduleDatetwoo 13/03/2023 @ 02:12 am."
+    - "scheduleDatetwoo 1902-04-26T12:00:00.000Z."
+    - "scheduleDatetwoo 1981-01-01T12:00:00.000Z."
     - "scheduleDatetwoo 01/02/2023 @ 02:12 pm."
     - "22/04/2023 @ 05:16 pm."
-    - "scheduleDatetwoo 12/03/2023 @ 02:03 am"
+    - "scheduleDatetwoo 1997-04-01T12:00:00.000Z"
     - "scheduleDatetwoo 30/06/2023 @ 12:03 pm"
 - intent: tell_phone
   examples: |
