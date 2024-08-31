@@ -121,7 +121,7 @@ responses:
     buttons:
     - title: Appointment
       payload: /appointment
-    - title: Exit
+    - title: Other Enquiries
       payload: /goodbye
   utter_appointment_options:
   - text: Please choose an option from the appointment menu.
