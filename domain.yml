@@ -124,7 +124,7 @@ responses:
     - title: Exit
       payload: /goodbye
   utter_appointment_options:
-  - text: Select an option under appointment menu.
+  - text: Please choose an option from the appointment menu.
     buttons:
     - title: Schedule New Appointment
       payload: /schedule_new_appointment
@@ -165,22 +165,9 @@ responses:
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
   utter_ask_appointment_info:
   - text: |-
-      Please allow us to have at least 1 working day for the arrangement to confirm an appointment.
+      Please allow at least one working day to confirm your appointment.
 
-      For appointment bookings, we would need to collect the data as below. We will guide you through this process.
-
-      *Patient's full name:*
-      *Date of Birth:*
-      *IC Number (Malaysian)/ Passport Number (Foreigners):*
-      *Gender:*
-      *Email address:*
-      *Contact Number:*
-      *1st choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_
-      *2nd choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_
-      *Preferred Doctor (if any):*
-      *Medical condition:* 
-
-      Let's go!
+      To book, we'll need some basic information like your name, IC, and email. This should only take about 30 seconds. 
   utter_appointment_confirm:
   - text: |-
       Dear {name}
@@ -197,7 +184,7 @@ responses:
       *Insurance Assistant Direct Line:* 03-21600877
       *Insurance Assistant Fax Line:* 03-27823377
   utter_ask_full_name:
-  - text: "Could you please provide the patient's full name to start this whole journey?"
+  - text: "Lets begin with your full name."
   utter_ask_dob:
   - text: May I know the patient's date of birth, please? (DD/MM/YYYY)
   utter_ask_dob_two:
