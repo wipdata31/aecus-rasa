@@ -30,17 +30,17 @@ stories:
   - action: action_tell_full_name
   - slot_was_set:
     - full_name: KIRON MALA
-  - action: utter_ask_dob
-  - intent: tell_dob
-  - action: action_tell_dob
-  - slot_was_set:
-    - dob: 19/04/1902
   - action: utter_ask_nationality
   - intent: tell_nationality
     entities:
     - nationality: malaysian
   - slot_was_set:
     - nationality: malaysian
+  - action: utter_ask_dob
+  - intent: tell_dob
+  - action: action_tell_dob
+  - slot_was_set:
+    - dob: 19/04/1902
   - checkpoint: ic_number_taking_checkpoint
 
 - story: ic_number_taking
