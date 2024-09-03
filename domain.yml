@@ -170,19 +170,16 @@ responses:
       To book, we'll need some basic information like your name, IC, and email. This should only take about 30 seconds. 
   utter_appointment_confirm:
   - text: |-
-      Dear {name}
+      Dear {name},
 
-      Warmest Greeting from Example Hospital.
+      Thank you for selecting us as your preferred healthcare provider.
 
-      Thank you for choosing us as your preferred choice of healthcare service provider.
+      As requested, here are your appointment details:
 
-      As per your request, please find below appointment details:
-
-      *Patient's full name:* {full_name}
-      *Attending Doctor:* {doctor}
-      *Appointment Date @ Time:* {scheduledateone}
-      *Insurance Assistant Direct Line:* 03-21600877
-      *Insurance Assistant Fax Line:* 03-27823377
+      Patient's Full Name: {full_name}
+      Attending Doctor: {doctor}
+      1st Appointment Date & Time: {scheduledateone}
+      2nd Appointment Date & Time: {scheduledateone}
   utter_ask_full_name:
   - text: "Lets begin with your full name."
   utter_ask_dob:
@@ -196,7 +193,7 @@ responses:
   utter_ask_email:
   - text: Please provide the patient's email address.
   utter_ask_phone:
-  - text: Please provide the patient's phone number. (Please include country code prefix e.g. +62)
+  - text: Please provide the patient's phone number. (Please include country code prefix e.g. +60)
   utter_ask_doctor:
   - text: "Does the patient have any preferred doctor? If yes, please provide the name of the doctor."
   utter_ask_symptomp:
@@ -208,8 +205,6 @@ responses:
       payload: male
     - title: Female
       payload: female
-    - title: Others
-      payload: others
   utter_ask_nationality:
   - text: Please indicate the patient's nationality.
     buttons:
@@ -225,7 +220,7 @@ responses:
     - title: Foreigner
       payload: foreigner
   utter_ask_scheduledateone:
-  - text: When would you like to schedule the appointment? Please provide the preferred date and time.
+  - text: Please provide the date and time you'd like to schedule for your appointment.
   utter_ask_scheduledatetwo:
   - text: If the preferred schedule is not available, do you have an alternative date and time?
 session_config:
