@@ -76,16 +76,16 @@ stories:
 - story: rest_appointment_path
   steps:
   - checkpoint: continuing_rest_appointment_path
-  - action: utter_ask_doctor
-  - intent: tell_doctor
-  - action: action_tell_doctor
-  - slot_was_set:
-    - doctor: 19/04/1902
   - action: utter_ask_symptomp
   - intent: tell_symptomp
   - action: action_tell_symptomp
   - slot_was_set:
-    - symptomp: 19/04/1902
+    - symptomp: fever
+  - action: utter_ask_doctor
+  - intent: tell_doctor
+  - action: action_tell_doctor
+  - slot_was_set:
+    - doctor: Dr. Xavier
   - action: utter_ask_scheduledateone
   - intent: tell_scheduledateone
   - action: action_tell_scheduledateone
