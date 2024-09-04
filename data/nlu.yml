@@ -247,6 +247,8 @@ nlu:
     - connect me to a real person
     - I need a real person
     - let me speak to a real person please
+    - I would not like to share that information
+    - can not.
 - regex: phone
   examples: |
     - \d{10,14}
