@@ -16,9 +16,7 @@ stories:
 ##====appointment story start ======##
 - story: happy_appointment_path
   steps:
-  - or:
-    - intent: schedule_new_appointment
-    - intent: reschedule_appointment
+  - intent: schedule_new_appointment
   - action: utter_ask_appointment_info
   - checkpoint: name_and_dob_checkpoint_for_appointment_path
 
@@ -100,6 +98,31 @@ stories:
   - action: action_utter_submit
   - action: action_restart
 ##====appointment story end ======##
+
+##====reschedule appointment story start =====##
+
+- story: happy_reschedule_appointment_path
+  steps:
+  - intent: reschedule_appointment
+  - action: utter_ask_apptId
+  - intent: tell_apptId
+  - action: action_tell_apptId
+  - slot_was_set:
+    - prevapptid: 651d9f0fcf4d2522d8a4eaf9
+  - action: utter_ask_scheduledateone
+  - intent: tell_scheduledateone
+  - action: action_tell_scheduledateone
+  - slot_was_set:
+    - scheduledateone: 19/04/1902
+  - action: utter_ask_scheduledatetwo
+  - intent: tell_scheduledatetwo
+  - action: action_tell_scheduledatetwo
+  - slot_was_set:
+    - scheduledatetwo: 19/04/1902
+  - action: action_reschedule_submit
+  - action: action_restart
+
+##====reschedule appointment story end=====##
 
 ##====cancel appointment story start ======##
 

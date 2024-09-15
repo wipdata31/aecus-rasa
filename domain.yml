@@ -23,10 +23,12 @@ intents:
 - tell_phone
 - tell_scheduledateone
 - tell_scheduledatetwo
+- tell_apptId
 - tell_symptomp
 - tell_nationality
 - tell_icnum_appointment
 - tell_nationality_two
+- personal_data_not_share
 
 entities:
 - gender
@@ -41,6 +43,7 @@ entities:
 - scheduledateone
 - scheduledatetwo
 - nationality
+- prevapptid
 slots:
   name:
     type: text
@@ -102,6 +105,11 @@ slots:
     mappings:
     - type: from_entity
       entity: nationality
+  prevapptid:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: prevapptid
 responses:
   utter_ask_name:
   - text: Hi, Hope you are having a good day. Could we start with your name please?
@@ -161,6 +169,8 @@ responses:
   - text: I'm a virtual assistant here to assist with your KPJ support.
   utter_handoff:
   - text: I apologize for any inconvenience caused. Allow me to transfer you to a live agent for further assistance.
+  utter_personal_data_not_share:
+  - text: I understand that you don't want to share personal information. I'll transfer you to a live agent who can help you further. Please wait a moment.
   utter_please_rephrase:
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
   utter_ask_appointment_info:
@@ -221,6 +231,8 @@ responses:
       payload: foreigner
   utter_ask_scheduledateone:
   - text: Please provide the date and time you'd like to schedule for your appointment.
+  utter_ask_apptId:
+  - text: Could you provide me with the previous appointment ID?
   utter_ask_scheduledatetwo:
   - text: If the preferred schedule is not available, do you have an alternative date and time?
 session_config:
@@ -234,10 +246,12 @@ actions:
 - action_tell_email
 - action_tell_full_name
 - action_tell_icnum
+- action_reschedule_submit
 - utter_ask_icnum_appointment
 - action_tell_name
 - action_tell_scheduledateone
 - action_tell_scheduledatetwo
+- action_tell_apptId
 - action_tell_symptomp
 - action_utter_submit
 - utter_Services
@@ -256,6 +270,7 @@ actions:
 - utter_ask_name
 - utter_ask_phone
 - utter_ask_scheduledateone
+- utter_ask_apptId
 - utter_ask_scheduledatetwo
 - utter_ask_symptomp
 - utter_goodbye

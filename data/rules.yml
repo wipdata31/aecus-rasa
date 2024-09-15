@@ -29,3 +29,7 @@ rules:
     steps:
     - intent: human_handoff
     - action: utter_handoff
+  - rule: dont want to share personal data
+    steps:
+    - intent: personal_data_not_share
+    - action: utter_personal_data_not_share

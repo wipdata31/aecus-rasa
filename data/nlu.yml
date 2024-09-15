@@ -127,6 +127,14 @@ nlu:
     - "22/04/2023 @ 05:16 pm."
     - "scheduleDatetwoo 1997-04-01T12:00:00.000Z"
     - "scheduleDatetwoo 30/06/2023 @ 12:03 pm"
+- intent: tell_apptId
+  examples: |
+    - "prevapptid 651d9f0fcf4d2522d8a4eabc."
+    - "prevapptid 651d9f0fcf4d2522d8a4ead1."
+    - "prevapptid 651d9f0fcf4d2522d8a4eaf9."
+    - "651d9f0fcf4d2522d8a4eb14."
+    - "prevapptid 651d9f0fcf4d2522d8a4eb2e"
+    - "prevapptid 651d9f0fvf4d2522d8a4eb2e"
 - intent: tell_phone
   examples: |
     - number is [+01843727741](phone)
@@ -180,6 +188,13 @@ nlu:
     - not really
     - it is not correct
     - na
+- intent: personal_data_not_share
+  examples: |
+    - I'm not comfortable sharing that information. 
+    - I prefer to keep that information private. 
+    - I'd rather not disclose that information. 
+    - I'm not inclined to provide that information. 
+    - I’d like to keep that information to myself. 
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -285,3 +300,6 @@ nlu:
 - regex: tell_symptomp
   examples: |
     - symptompp
+- regex: tell_apptId
+  examples: |
+    - prevapptid
