@@ -104,6 +104,11 @@ stories:
 - story: happy_reschedule_appointment_path
   steps:
   - intent: reschedule_appointment
+  - action: utter_ask_icnum_reschedule
+  - intent: tell_icnum_reschedule
+  - action: action_tell_icnum_reschedule
+  - slot_was_set:
+    - icnum: 960401-33-2222
   - action: utter_ask_apptId
   - intent: tell_apptId
   - action: action_tell_apptId

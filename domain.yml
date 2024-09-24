@@ -27,6 +27,7 @@ intents:
 - tell_symptomp
 - tell_nationality
 - tell_icnum_appointment
+- tell_icnum_reschedule
 - tell_nationality_two
 - personal_data_not_share
 
@@ -198,6 +199,8 @@ responses:
   - text: Could you kindly provide the patient's date of birth in the format DD/MM/YYYY, please?
   utter_ask_icnum_appointment:
   - text: Please provide the patient's IC Number (Malaysian)/ Passport Number (Foreigners) for creating the appointment.
+  utter_ask_icnum_reschedule:
+  - text: Please provide the patient's IC Number (Malaysian)/ Passport Number (Foreigners) for rescheduling appointment.
   utter_ask_icnum:
   - text: Please provide the patient's IC Number (Malaysian)/ Passport Number (Foreigners).
   utter_ask_email:
@@ -231,8 +234,6 @@ responses:
       payload: foreigner
   utter_ask_scheduledateone:
   - text: Please provide the date and time you'd like to schedule for your appointment.
-  utter_ask_apptId:
-  - text: Could you provide me with the previous appointment ID?
   utter_ask_scheduledatetwo:
   - text: If the preferred schedule is not available, do you have an alternative date and time?
 session_config:
@@ -240,6 +241,7 @@ session_config:
   carry_over_slots_to_new_session: true
 actions:
 - action_tell_icnum_appointment
+- action_tell_icnum_reschedule
 - action_tell_dob
 - action_tell_dob_two
 - action_tell_doctor
@@ -248,6 +250,7 @@ actions:
 - action_tell_icnum
 - action_reschedule_submit
 - utter_ask_icnum_appointment
+- utter_ask_icnum_reschedule
 - action_tell_name
 - action_tell_scheduledateone
 - action_tell_scheduledatetwo

@@ -92,6 +92,31 @@ nlu:
     - "appoiic 343-111-2244"
     - "appoiic 444-111-2244"
     - "appoiic 556-111-2244"
+- intent: tell_icnum_reschedule
+  examples: |
+    - "reschic 7438874384."
+    - "reschic is 43-434-43434."
+    - "reschic 4343443434."
+    - "12-332-2233"
+    - "reschic 3433234-323-2222"
+    - "reschic 664-323-4422"
+    - "reschic 3433234-111-2244"
+    - "reschic 566-111-2244"
+    - "reschic 3433234-111-2244"
+    - "reschic 555-111-2244"
+    - "reschic 675-111-2244"
+    - "reschic 3433234-111-2244"
+    - "reschic 343-111-2244"
+    - "reschic 089-111-2244"
+    - "reschic 787-111-2244"
+    - "reschic 787-111-2244"
+    - "reschic 676-111-2244"
+    - "reschic 4664-111-2244"
+    - "reschic 5654-111-2244"
+    - "reschic 4543-111-2244"
+    - "reschic 343-111-2244"
+    - "reschic 444-111-2244"
+    - "reschic 556-111-2244"
 - intent: tell_email
   examples: |
     - "emaill name@gmail.com."
@@ -288,6 +313,9 @@ nlu:
 - regex: tell_icnum_appointment
   examples: |
     - appoiic
+- regex: tell_icnum_reschedule
+  examples: |
+    - reschic
 - regex: tell_name
   examples: |
     - namehide
