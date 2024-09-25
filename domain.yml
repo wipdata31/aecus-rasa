@@ -257,6 +257,7 @@ actions:
 - action_tell_apptId
 - action_tell_symptomp
 - action_utter_submit
+- action_utter_ask_apptId
 - utter_Services
 - utter_appointment_cancel
 - utter_appointment_confirm
@@ -273,7 +274,6 @@ actions:
 - utter_ask_name
 - utter_ask_phone
 - utter_ask_scheduledateone
-- utter_ask_apptId
 - utter_ask_scheduledatetwo
 - utter_ask_symptomp
 - utter_goodbye
