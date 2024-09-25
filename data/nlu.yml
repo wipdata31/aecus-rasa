@@ -154,12 +154,12 @@ nlu:
     - "scheduleDatetwoo 30/06/2023 @ 12:03 pm"
 - intent: tell_apptId
   examples: |
-    - "prevapptid 651d9f0fcf4d2522d8a4eabc."
-    - "prevapptid 651d9f0fcf4d2522d8a4ead1."
-    - "prevapptid 651d9f0fcf4d2522d8a4eaf9."
-    - "651d9f0fcf4d2522d8a4eb14."
-    - "prevapptid 651d9f0fcf4d2522d8a4eb2e"
-    - "prevapptid 651d9f0fvf4d2522d8a4eb2e"
+    - "prevapptid AID-20240925-0001."
+    - "prevapptid AID-20250925-0002."
+    - "prevapptid AID-20240926-0010."
+    - "AID-20240915-0002."
+    - "prevapptid AID-20241125-0015"
+    - "prevapptid AID-20240125-0050"
 - intent: tell_phone
   examples: |
     - number is [+01843727741](phone)
