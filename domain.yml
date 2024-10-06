@@ -163,9 +163,7 @@ responses:
       As per your request, we have cancelled your appointment.
   utter_goodbye:
   - text: |-
-      Warmest Greeting from Example Hospital.
-
-      Thank you for choosing us as your preferred choice of healthcare service provider.
+      Thank you and have a great day!
   utter_iamabot:
   - text: I'm a virtual assistant here to assist with your KPJ support.
   utter_handoff:
