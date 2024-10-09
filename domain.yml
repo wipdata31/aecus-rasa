@@ -18,12 +18,13 @@ intents:
 - tell_email
 - tell_full_name
 - tell_gender
-- tell_icnum
+- tell_icnum_cancel
 - tell_name
 - tell_phone
 - tell_scheduledateone
 - tell_scheduledatetwo
 - tell_apptId
+- tell_apptId_cancel
 - tell_symptomp
 - tell_nationality
 - tell_icnum_appointment
@@ -141,26 +142,6 @@ responses:
       payload: /reschedule_appointment
     - title: Cancel Appointment
       payload: /cancel_appointment
-  utter_ask_appointment_cancel_info:
-  - text: |-
-      Please allow us to have at least 1 working day for the arrangement to cancel your appointment.
-
-      For appointment cancellation, we would need to collect the data as below. We will guide you through this process.
-
-      *Patient's full name:*
-      *Date of Birth:*
-      *IC Number (Malaysian)/ Passport Number (Foreigners):* 
-
-      Let's go!
-  utter_appointment_cancel:
-  - text: |-
-      Dear {name}
-
-      Warmest Greeting from Example Hospital.
-
-      Thank you for choosing us as your preferred choice of healthcare service provider.
-
-      As per your request, we have cancelled your appointment.
   utter_goodbye:
   - text: |-
       Thank you and have a great day!
@@ -199,8 +180,8 @@ responses:
   - text: Please provide the patient's IC Number (Malaysian)/ Passport Number (Foreigners) for creating the appointment.
   utter_ask_icnum_reschedule:
   - text: Please provide the patient's IC Number (Malaysian)/ Passport Number (Foreigners) for rescheduling appointment.
-  utter_ask_icnum:
-  - text: Please provide the patient's IC Number (Malaysian)/ Passport Number (Foreigners).
+  utter_ask_icnum_cancel:
+  - text: Please provide the patient's IC Number (Malaysian)/ Passport Number (Foreigners) for cancelling the appointment.
   utter_ask_email:
   - text: Please provide the patient's email address.
   utter_ask_phone:
@@ -245,17 +226,21 @@ actions:
 - action_tell_doctor
 - action_tell_email
 - action_tell_full_name
-- action_tell_icnum
+- action_tell_icnum_cancel
 - action_reschedule_submit
+- action_cancel_appt_submit
 - utter_ask_icnum_appointment
 - utter_ask_icnum_reschedule
+- utter_ask_icnum_cancel
 - action_tell_name
 - action_tell_scheduledateone
 - action_tell_scheduledatetwo
 - action_tell_apptId
+- action_tell_apptId_cancel
 - action_tell_symptomp
 - action_utter_submit
 - action_utter_ask_apptId
+- action_utter_ask_apptId_cancel
 - utter_Services
 - utter_appointment_cancel
 - utter_appointment_confirm
@@ -268,7 +253,6 @@ actions:
 - utter_ask_email
 - utter_ask_full_name
 - utter_ask_gender
-- utter_ask_icnum
 - utter_ask_name
 - utter_ask_phone
 - utter_ask_scheduledateone

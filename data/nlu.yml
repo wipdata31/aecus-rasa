@@ -42,7 +42,7 @@ nlu:
     - "dobtwo 1902-04-27T12:00:00.000Z"
     - "dobtwo 1902-04-28T12:00:00.000Z"
     - "dobtwo 1902-04-29T12:00:00.000Z"
-- intent: tell_icnum
+- intent: tell_icnum_cancel
   examples: |
     - "icnumber 7438874384."
     - "icnumber is 43-434-43434."
@@ -160,6 +160,14 @@ nlu:
     - "AID-20240915-0002."
     - "prevapptid AID-20241125-0015"
     - "prevapptid AID-20240125-0050"
+- intent: tell_apptId_cancel
+  examples: |
+    - "cancelpreaid AID-20240925-0001."
+    - "cancelpreaid AID-20250925-0002."
+    - "cancelpreaid AID-20240926-0010."
+    - "AID-20240915-0002."
+    - "cancelpreaid AID-20241125-0015"
+    - "cancelpreaid AID-20240125-0050"
 - intent: tell_phone
   examples: |
     - number is [+01843727741](phone)
@@ -307,7 +315,7 @@ nlu:
 - regex: tell_full_name
   examples: |
     - fullname
-- regex: tell_icnum
+- regex: tell_icnum_cancel
   examples: |
     - icnumber
 - regex: tell_icnum_appointment
@@ -331,3 +339,6 @@ nlu:
 - regex: tell_apptId
   examples: |
     - prevapptid
+- regex: tell_apptId_cancel
+  examples: |
+    - cancelpreaid

@@ -134,39 +134,17 @@ stories:
 - story: cancel_appointment_path
   steps:
   - intent: cancel_appointment
-  - action: utter_ask_appointment_cancel_info
-  - checkpoint: name_and_dob_checkpoint_for_cancel_appointment_path
-
-- story: name_and_dob_cancel_appointment_path
-  steps:
-  - checkpoint: name_and_dob_checkpoint_for_cancel_appointment_path
-  - action: utter_ask_full_name
-  - intent: tell_full_name
-  - action: action_tell_full_name
+  - action: utter_ask_icnum_cancel
+  - intent: tell_icnum_cancel
+  - action: action_tell_icnum_cancel
   - slot_was_set:
-    - full_name: KIRON MALA
-  - action: utter_ask_dob_two
-  - intent: tell_dob_two
-  - action: action_tell_dob_two
+    - icnum: 960401-33-2222
+  - action: action_utter_ask_apptId_cancel
+  - intent: tell_apptId_cancel
+  - action: action_tell_apptId_cancel
   - slot_was_set:
-    - dob: 19/04/1902
-  - action: utter_ask_nationality_two
-  - intent: tell_nationality_two
-    entities:
-    - nationality: malaysian
-  - slot_was_set:
-    - nationality: malaysian
-  - checkpoint: taking_ic_for_cancel_appointment_pat
-
-- story: ic_number_taking_cancel_appointment_path
-  steps:
-  - checkpoint: taking_ic_for_cancel_appointment_pat
-  - action: utter_ask_icnum
-  - intent: tell_icnum
-  - action: action_tell_icnum
-  - slot_was_set:
-    - icnum: 343-323-2222
-  - action: utter_appointment_cancel
+    - prevapptid: 651d9f0fcf4d2522d8a4eaf9
+  - action: action_cancel_appt_submit
   - action: action_restart
 
 ##====cancel appointment story end ======##
