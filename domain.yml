@@ -5,6 +5,7 @@ intents:
 - appointment
 - bot_challenge
 - cancel_appointment
+- faq
 - deny
 - goodbye
 - greet
@@ -132,7 +133,7 @@ responses:
     - title: Appointment
       payload: /appointment
     - title: Other Enquiries
-      payload: /goodbye
+      payload: /faq
   utter_appointment_options:
   - text: Please choose an option from the appointment menu.
     buttons:
@@ -190,6 +191,8 @@ responses:
   - text: "Does the patient have any preferred doctor? If yes, please provide the name of the doctor."
   utter_ask_symptomp:
   - text: Could you please provide some information about the patient's medical condition?
+  utter_faq:
+  - text: Please ask your query, I here to answer.
   utter_ask_gender:
   - text: Please indicate the patient's gender.
     buttons:
@@ -262,3 +265,4 @@ actions:
 - utter_greet
 - utter_ask_nationality
 - utter_ask_nationality_two
+- utter_faq
