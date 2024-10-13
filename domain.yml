@@ -159,18 +159,6 @@ responses:
       Please allow at least one working day to confirm your appointment.
 
       To book, we'll need some basic information like your name, IC, and email. This should only take about 30 seconds. 
-  utter_appointment_confirm:
-  - text: |-
-      Dear {name},
-
-      Thank you for selecting us as your preferred healthcare provider.
-
-      As requested, here are your appointment details:
-
-      Patient's Full Name: {full_name}
-      Attending Doctor: {doctor}
-      1st Appointment Date & Time: {scheduledateone}
-      2nd Appointment Date & Time: {scheduledatetwo}
   utter_ask_full_name:
   - text: "Lets begin with your full name."
   utter_ask_dob:
@@ -232,6 +220,7 @@ actions:
 - action_tell_icnum_cancel
 - action_reschedule_submit
 - action_cancel_appt_submit
+- action_utter_appointment_confirm
 - utter_ask_icnum_appointment
 - utter_ask_icnum_reschedule
 - utter_ask_icnum_cancel
@@ -246,7 +235,6 @@ actions:
 - action_utter_ask_apptId_cancel
 - utter_Services
 - utter_appointment_cancel
-- utter_appointment_confirm
 - utter_appointment_options
 - utter_ask_appointment_cancel_info
 - utter_ask_appointment_info
