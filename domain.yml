@@ -5,7 +5,7 @@ intents:
 - appointment
 - bot_challenge
 - cancel_appointment
-- faq
+- other_enquiries
 - deny
 - goodbye
 - greet
@@ -133,7 +133,7 @@ responses:
     - title: Appointment
       payload: /appointment
     - title: Other Enquiries
-      payload: /faq
+      payload: /other_enquiries
   utter_appointment_options:
   - text: Please choose an option from the appointment menu.
     buttons:
@@ -162,7 +162,7 @@ responses:
   utter_ask_full_name:
   - text: "Lets begin with your full name."
   utter_ask_dob:
-  - text: May I know the patient's date of birth, please? (DD/MM/YYYY)
+  - text: May I know the patient's date of birth, please? eg. 28 Aug 2000
   utter_ask_dob_two:
   - text: Could you kindly provide the patient's date of birth in the format DD/MM/YYYY, please?
   utter_ask_icnum_appointment:
@@ -179,8 +179,8 @@ responses:
   - text: "Does the patient have any preferred doctor? If yes, please provide the name of the doctor."
   utter_ask_symptomp:
   - text: Could you please provide some information about the patient's medical condition?
-  utter_faq:
-  - text: Please ask your query, I here to answer.
+  utter_other_enquiries:
+  - text: Please ask your query, I am here to answer.
   utter_ask_gender:
   - text: Please indicate the patient's gender.
     buttons:
@@ -253,4 +253,4 @@ actions:
 - utter_greet
 - utter_ask_nationality
 - utter_ask_nationality_two
-- utter_faq
+- utter_other_enquiries

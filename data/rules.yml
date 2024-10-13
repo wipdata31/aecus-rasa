@@ -33,7 +33,7 @@ rules:
     steps:
     - intent: personal_data_not_share
     - action: utter_personal_data_not_share
-  - rule: faq_rule
+  - rule: other_enquiries_rule
     steps:
-    - intent: faq
-    - action: utter_faq
+    - intent: other_enquiries
+    - action: utter_other_enquiries
