@@ -180,7 +180,7 @@ responses:
   utter_ask_symptomp:
   - text: Could you please provide some information about the patient's medical condition?
   utter_other_enquiries:
-  - text: Please ask your query, I am here to answer.
+  - text: I am here to assist you with any questions or information you may need regarding Vita Medical Care. How can I help you today?
   utter_ask_gender:
   - text: Please indicate the patient's gender.
     buttons:
