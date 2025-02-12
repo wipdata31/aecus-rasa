@@ -1,39 +1,55 @@
 version: "3.1"
 
 rules:
+  # Proceed with user enquiry [Proceed -> list services available]
   - rule: Initial Proceed
     steps:
     - intent: proceed
     - action: utter_Services
+
+  # List out appointment options [Choose 'appointments' from Services -> schedule, reschedule or cancel appointment]
   - rule: appointment options rule
     steps:
     - intent: appointment
     - action: utter_appointment_options
-  - rule: Say goodbye anytime the user says goodbye
-    steps:
-    - intent: goodbye
-    - action: utter_goodbye
-  - rule: Say 'I am a bot' anytime the user challenges
-    steps:
-    - intent: bot_challenge
-    - action: utter_iamabot
-  # - rule: out-of-scope
-  #   steps:
-  #   - intent: out_of_scope
-  #   - action: utter_out_of_scope
-  - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
-    steps:
-    - intent: nlu_fallback
-    - action: utter_please_rephrase
-  - rule: Handoff
-    steps:
-    - intent: human_handoff
-    - action: utter_handoff
-  - rule: dont want to share personal data
-    steps:
-    - intent: personal_data_not_share
-    - action: utter_personal_data_not_share
+
+  # List out other enquries options [Choose 'other enquiries' from Services -> list of other enquiries user can choose]
   - rule: other_enquiries_rule
     steps:
     - intent: other_enquiries
     - action: utter_other_enquiries
+
+  # End conversation anytime farewell message provided [any point during the conversation -> END]
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+    - intent: goodbye
+    - action: utter_goodbye
+  
+  # Return bot identity to user when asked/challenged [any point during the conversation -> provide bot's persona]
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+  # Ask user to rephrase input if bot is unsure of input format [any point during conversation -> ask user to rephrase input]
+  - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+    steps:
+    - intent: nlu_fallback
+    - action: utter_please_rephrase
+
+  # Handoff user to a human assistant [any point during conversation -> pass user to human assistant on seeing relevant handoff terms]
+  - rule: Handoff
+    steps:
+    - intent: human_handoff
+    - action: utter_handoff
+
+  # Avoid sharing personal data with user [any user inquiry about sharing information -> return message to deny access]
+  - rule: dont want to share personal data
+    steps:
+    - intent: personal_data_not_share
+    - action: utter_personal_data_not_share
+
+  # - rule: out-of-scope
+  #   steps:
+  #   - intent: out_of_scope
+  #   - action: utter_out_of_scope

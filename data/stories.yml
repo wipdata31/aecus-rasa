@@ -9,7 +9,7 @@ stories:
   - intent: tell_name
   - action: action_tell_name
   - slot_was_set:
-    - name: KUTER
+    - name: USER_NAME
   - action: utter_greet
 
 
@@ -23,128 +23,181 @@ stories:
 - story: name_and_dob
   steps:
   - checkpoint: name_and_dob_checkpoint_for_appointment_path
+  
+  #  Get user full name
   - action: utter_ask_full_name
   - intent: tell_full_name
   - action: action_tell_full_name
   - slot_was_set:
-    - full_name: KIRON MALA
+    - full_name: USER_FULL_NAME
+
+  # Get user nationality
   - action: utter_ask_nationality
   - intent: tell_nationality
     entities:
-    - nationality: malaysian
+    - nationality: USER_NATIONALITY
   - slot_was_set:
-    - nationality: malaysian
+    - nationality: USER_NATIONALITY
+
+  # Get user date of birth
   - action: utter_ask_dob
   - intent: tell_dob
   - action: action_tell_dob
   - slot_was_set:
-    - dob: 19/04/1902
+    - dob: USER_DOB
+
+  # Set checkpoint to move to next story for getting IC
   - checkpoint: ic_number_taking_checkpoint
 
 - story: ic_number_taking
   steps:
   - checkpoint: ic_number_taking_checkpoint
+
+  # Get user IC number 
   - action: utter_ask_icnum_appointment
   - intent: tell_icnum_appointment
   - action: action_tell_icnum_appointment
   - slot_was_set:
-    - icnum: 960401-33-2222
+    - icnum: USER_IC
+
+  # Get user gender
   - action: utter_ask_gender
   - intent: tell_gender
     entities:
-    - gender: female
+    - gender: USER_GENDER
   - slot_was_set:
-    - gender: female
+    - gender: USER_GENDER
+
+    # Set checkpoint to move to next story for getting email and phone number
   - checkpoint: email_phone_checkpoint_for_appointment_path
 
 - story: email_phone
   steps:
   - checkpoint: email_phone_checkpoint_for_appointment_path
+  
+  # Get user email
   - action: utter_ask_email
   - intent: tell_email
   - action: action_tell_email
+
+  # Get user phone nunmber
   - action: utter_ask_phone
   - intent: tell_phone
     entities:
-    - phone: 0896786554
+    - phone: USER_PHONE_NO
   - slot_was_set:
-    - phone: 0896786554
+    - phone: USER_PHONE_NO
+  
+  # Set checkpoint to continue the remaining segment of setting an appointment 
   - checkpoint: continuing_rest_appointment_path 
 
 - story: rest_appointment_path
   steps:
   - checkpoint: continuing_rest_appointment_path
+  
+  # Get user symptoms
   - action: utter_ask_symptomp
   - intent: tell_symptomp
   - action: action_tell_symptomp
   - slot_was_set:
-    - symptomp: fever
+    - symptomp: USER_SYMPTOMS
+
+  # Get user preferred doctor
   - action: utter_ask_doctor
   - intent: tell_doctor
   - action: action_tell_doctor
   - slot_was_set:
-    - doctor: Dr. Xavier
+    - doctor: USER_PREFERRED_DOCTOR
+
+  # Get user first preferred scheduling date
   - action: utter_ask_scheduledateone
   - intent: tell_scheduledateone
   - action: action_tell_scheduledateone
   - slot_was_set:
-    - scheduledateone: 19/04/1902
+    - scheduledateone: FIRST_PREFERRED_DATE
+
+  # Get user second preferred scheduling date
   - action: utter_ask_scheduledatetwo
   - intent: tell_scheduledatetwo
   - action: action_tell_scheduledatetwo
   - slot_was_set:
-    - scheduledatetwo: 19/04/1902
+    - scheduledatetwo: SECOND_PREFERRED_DATE
+  
+  # Confirm appointment setting action upon confirmation and submission of details
   - action: action_utter_appointment_confirm
   - action: action_utter_submit
+
+  # Restart story flow upon reaching end
   - action: action_restart
 ##====appointment story end ======##
 
-##====reschedule appointment story start =====##
 
+
+##====reschedule appointment story start =====##
 - story: happy_reschedule_appointment_path
   steps:
   - intent: reschedule_appointment
+
+  # Get user IC number for rescheduling
   - action: utter_ask_icnum_reschedule
   - intent: tell_icnum_reschedule
   - action: action_tell_icnum_reschedule
   - slot_was_set:
-    - icnum: 960401-33-2222
+    - icnum: USER_IC
+
+  # Get user appointment ID for rescheduling
   - action: action_utter_ask_apptId
   - intent: tell_apptId
   - action: action_tell_apptId
   - slot_was_set:
-    - prevapptid: 651d9f0fcf4d2522d8a4eaf9
+    - prevapptid: PREV_APPT_ID
+
+  # Get user first preferred scheduling date
   - action: utter_ask_scheduledateone
   - intent: tell_scheduledateone
   - action: action_tell_scheduledateone
   - slot_was_set:
-    - scheduledateone: 19/04/1902
+    - scheduledateone: FIRST_PREFERRED_DATE
+
+  # Get user second preferred scheduling date
   - action: utter_ask_scheduledatetwo
   - intent: tell_scheduledatetwo
   - action: action_tell_scheduledatetwo
   - slot_was_set:
-    - scheduledatetwo: 19/04/1902
-  - action: action_reschedule_submit
-  - action: action_restart
+    - scheduledatetwo: SECOND_PREFERRED_DATE
 
+  # Submit rescheduling details
+  - action: action_reschedule_submit
+
+  # Restart story flow upon reaching end
+  - action: action_restart
 ##====reschedule appointment story end=====##
 
-##====cancel appointment story start ======##
 
+
+##====cancel appointment story start ======##
 - story: cancel_appointment_path
   steps:
   - intent: cancel_appointment
+  
+  # Get user IC number
   - action: utter_ask_icnum_cancel
   - intent: tell_icnum_cancel
   - action: action_tell_icnum_cancel
   - slot_was_set:
-    - icnum: 960401-33-2222
+    - icnum: USER_IC
+  
+  # Get user appointment ID for cancellation
   - action: action_utter_ask_apptId_cancel
   - intent: tell_apptId_cancel
   - action: action_tell_apptId_cancel
   - slot_was_set:
-    - prevapptid: 651d9f0fcf4d2522d8a4eaf9
+    - prevapptid: PREV_APPT_ID
+
+  # Submit cancellation details
   - action: action_cancel_appt_submit
+
+  # Restart story flow upon reaching end
   - action: action_restart
 
 ##====cancel appointment story end ======##

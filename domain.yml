@@ -1,4 +1,5 @@
 version: '3.1'
+# Possible actions user can take when interacting with bot
 intents:
 - admission
 - affirm
@@ -33,6 +34,7 @@ intents:
 - tell_nationality_two
 - personal_data_not_share
 
+# Possible inputs user provides for storing
 entities:
 - gender
 - phone
@@ -47,75 +49,93 @@ entities:
 - scheduledatetwo
 - nationality
 - prevapptid
+- time
+
+# Storing and managing inputs from entities (hence type: from_entity)
 slots:
-  name:
+  name: 
     type: text
     mappings:
     - type: from_entity
       entity: name
+
   full_name:
     type: text
     mappings:
     - type: from_entity
       entity: full_name
+
   dob:
     type: text
     mappings:
     - type: from_entity
       entity: dob
+
   icnum:
     type: text
     mappings:
     - type: from_entity
       entity: icnum
+
   gender:
     type: text
     mappings:
     - type: from_entity
       entity: gender
+
   email:
     type: text
     mappings:
     - type: from_entity
       entity: email
+
   phone:
     type: any
     mappings:
     - type: from_entity
       entity: phone
+
   doctor:
     type: text
     mappings:
     - type: from_entity
       entity: doctor
+
   symptomp:
     type: text
     mappings:
     - type: from_entity
       entity: symptomp
-  scheduledateone:
+
+  scheduledateone:  # Original scheduled date
     type: text
     mappings:
     - type: from_entity
       entity: scheduledateone
-  scheduledatetwo:
+
+  scheduledatetwo:  # Rescheduled date
     type: text
     mappings:
     - type: from_entity
       entity: scheduledatetwo
-  nationality:
+
+  nationality:  
     type: text
     mappings:
     - type: from_entity
       entity: nationality
-  prevapptid:
+
+  prevapptid:   # Previous appointment ID
     type: text
     mappings:
     - type: from_entity
       entity: prevapptid
+
+# Statements/options bot can provide upon an action trigger
 responses:
   utter_ask_name:
-  - text: Hi, Hope you are having a good day. Could we start with your name please?
+  - text: Hi, hope you are having a good day. Could I get your name please?
+
   utter_greet:
   - text: |-
       Hi {name}
@@ -124,9 +144,11 @@ responses:
 
       I am your *Virtual Assistant*. Please tap the 'Proceed' button for further assistance.
     image: https://bernama.com/storage/photos/0ed606deb7433f6f5ace448536772b0360531eda1e2fe
+
     buttons:
     - title: Proceed
       payload: /proceed
+
   utter_Services:
   - text: 'Please take a moment to select your desired service from the options:'
     buttons:
@@ -134,6 +156,7 @@ responses:
       payload: /appointment
     - title: Other Enquiries
       payload: /other_enquiries
+
   utter_appointment_options:
   - text: Please choose an option from the appointment menu.
     buttons:
@@ -143,73 +166,100 @@ responses:
       payload: /reschedule_appointment
     - title: Cancel Appointment
       payload: /cancel_appointment
+
   utter_goodbye:
   - text: |-
       Thank you and have a great day!
+
   utter_iamabot:
-  - text: I'm a virtual assistant here to assist with your KPJ support.
+  - text: I'm a KPJ virtual assistant here to assist you with your needs.
+
   utter_handoff:
   - text: I apologize for any inconvenience caused. Allow me to transfer you to a live agent for further assistance.
+
   utter_personal_data_not_share:
   - text: I understand that you don't want to share personal information. I'll transfer you to a live agent who can help you further. Please wait a moment.
+
   utter_please_rephrase:
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+
   utter_ask_appointment_info:
   - text: |-
       Please allow at least one working day to confirm your appointment.
 
       To book, we'll need some basic information like your name, IC, and email. This should only take about 30 seconds. 
+
   utter_ask_full_name:
-  - text: "Lets begin with your full name."
+  - text: "Please provide your full name."
+
   utter_ask_dob:
-  - text: May I know the patient's date of birth, please? eg. 28 Aug 2000
+  - text: May I know when is your date of birth? (e.g. 14/04/2001, 25/12/1983, etc.)
+
+# why need 2 DOBs? -> for different flows, it requires 2 date of birth input (e.g. for a user, the would provide their DOB to be stored twice)
   utter_ask_dob_two:
-  - text: Could you kindly provide the patient's date of birth in the format DD/MM/YYYY, please?
+  - text: May I know when is your date of birth? (e.g. 14/04/2001, 25/12/1983, etc.)
+
   utter_ask_icnum_appointment:
-  - text: Please provide the patient's IC Number (Malaysian)/ Passport Number (Foreigners) for creating the appointment.
+  - text: Please provide your IC Number (Malaysian)/ Passport Number (Foreigners) to set an appointment.
+
   utter_ask_icnum_reschedule:
-  - text: Please provide the patient's IC Number (Malaysian)/ Passport Number (Foreigners) for rescheduling appointment.
+  - text: Please provide your IC Number (Malaysian)/ Passport Number (Foreigners) to reschedule your appointment.
+
   utter_ask_icnum_cancel:
-  - text: Please provide the patient's IC Number (Malaysian)/ Passport Number (Foreigners) for cancelling the appointment.
+  - text: Please provide your IC Number (Malaysian)/ Passport Number (Foreigners) to cancel your appointment.
+
   utter_ask_email:
-  - text: Please provide the patient's email address.
+  - text: Please provide your email address.
+
   utter_ask_phone:
-  - text: Please provide the patient's phone number. (Please include country code prefix e.g. +60)
+  - text: Please provide your phone number. (Please include country code prefix e.g. +60)
+
   utter_ask_doctor:
-  - text: "Does the patient have any preferred doctor? If yes, please provide the name of the doctor."
+  - text: "Do you have a preferred doctor? If yes, please provide doctor's name."
+
   utter_ask_symptomp:
-  - text: Could you please provide some information about the patient's medical condition?
+  - text: Could you please provide some information about your medical condition or how you currently feel?
+
+  # what kind of other services would be shown with other enquiries
   utter_other_enquiries:
   - text: I am here to assist you with any questions or information you may need regarding Vita Medical Care. How can I help you today?
+
   utter_ask_gender:
-  - text: Please indicate the patient's gender.
+  - text: Please indicate the your gender.
     buttons:
     - title: Male
       payload: male
     - title: Female
       payload: female
+      
   utter_ask_nationality:
-  - text: Please indicate the patient's nationality.
+  - text: Please indicate the your nationality.
     buttons:
     - title: Malaysian
       payload: malaysian
     - title: Foreigner
       payload: foreigner
+
   utter_ask_nationality_two:
-  - text: Please select the patient's nationality from the following options.
+  - text: Please select your nationality from the following options.
     buttons:
     - title: Malaysian
       payload: malaysian
     - title: Foreigner
       payload: foreigner
+
   utter_ask_scheduledateone:
   - text: Please provide the date and time you'd like to schedule for your appointment.
+
   utter_ask_scheduledatetwo:
   - text: If the preferred schedule is not available, do you have an alternative date and time?
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
 actions:
+# Actions can be found in aecus-rasa-action
 - action_tell_icnum_appointment
 - action_tell_icnum_reschedule
 - action_tell_dob
@@ -221,9 +271,9 @@ actions:
 - action_reschedule_submit
 - action_cancel_appt_submit
 - action_utter_appointment_confirm
-- utter_ask_icnum_appointment
-- utter_ask_icnum_reschedule
-- utter_ask_icnum_cancel
+# - utter_ask_icnum_appointment
+# - utter_ask_icnum_reschedule
+# - utter_ask_icnum_cancel
 - action_tell_name
 - action_tell_scheduledateone
 - action_tell_scheduledatetwo
@@ -233,10 +283,15 @@ actions:
 - action_utter_submit
 - action_utter_ask_apptId
 - action_utter_ask_apptId_cancel
+
+# Utterances the bot can make based on trigger
 - utter_Services
-- utter_appointment_cancel
+- utter_ask_icnum_appointment
+- utter_ask_icnum_reschedule
+- utter_ask_icnum_cancel
+# - utter_appointment_cancel
 - utter_appointment_options
-- utter_ask_appointment_cancel_info
+# - utter_ask_appointment_cancel_info
 - utter_ask_appointment_info
 - utter_ask_dob
 - utter_ask_dob_two

@@ -29,6 +29,9 @@ pipeline:
 - name: FallbackClassifier
   threshold: 0.7
   ambiguity_threshold: 0.1
+# - name: DucklingEntityExtractor   # For recognizing date formats automatically
+#   url: "http://localhost:8000"
+#   dimensions: ["time"]
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/

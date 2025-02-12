@@ -9,186 +9,745 @@ nlu:
   examples: |
     - salam
     - hi
+    - hello
+    - hey
+    - yo
+    - hai
+    - hi there
     - hello there
     - good morning
     - good evening
     - hey there
-    - let's go
-    - hey dude
+    - start
     - good afternoon
-- intent: tell_name
+
+# Define regex patterns for user inputs
+- regex: phone
   examples: |
-    - namehide Dipu.
-    - namehide Shitu.
-    - namehide Soccur.
-    - namehide Noman
-    - namehide Kiron
-- intent: tell_full_name
-  examples: |
-    - fullname Ena.
-    - fullname Bonni.
-    - fullname Kuper.
-    - fullname Kabir
-    - fullname kiron mala
-- intent: tell_dob
-  examples: |
-    - "dateOfBirth 2013-12-12T01:00:00.000Z."
-    - "dateOfBirth is 1997-04-01T12:00:00.000Z."
-    - "dateOfBirth 1981-01-01T12:00:00.000Z."
-    - "1996-06-06"
-- intent: tell_dob_two
-  examples: |
-    - "dobtwo 1902-04-26T12:00:00.000Z"
-    - "dobtwo 1902-04-27T12:00:00.000Z"
-    - "dobtwo 1902-04-28T12:00:00.000Z"
-    - "dobtwo 1902-04-29T12:00:00.000Z"
-- intent: tell_icnum_cancel
-  examples: |
-    - "icnumber 7438874384."
-    - "icnumber is 43-434-43434."
-    - "icnumber 4343443434."
-    - "12-332-2233"
-    - "icnumber 343-323-2222"
-    - "icnumber 664-323-4422"
-    - "icnumber 343-111-2244"
-    - "icnumber 566-111-2244"
-    - "icnumber 343-111-2244"
-    - "icnumber 555-111-2244"
-    - "icnumber 675-111-2244"
-    - "icnumber 343-111-2244"
-    - "icnumber 343-111-2244"
-    - "icnumber 089-111-2244"
-    - "icnumber 787-111-2244"
-    - "icnumber 787-111-2244"
-    - "icnumber 676-111-2244"
-    - "icnumber 4664-111-2244"
-    - "icnumber 5654-111-2244"
-    - "icnumber 4543-111-2244"
-    - "icnumber 343-111-2244"
-    - "icnumber 444-111-2244"
-    - "icnumber 556-111-2244"
-- intent: tell_icnum_appointment
-  examples: |
-    - "appoiic 7438874384."
-    - "appoiic is 43-434-43434."
-    - "appoiic 4343443434."
-    - "12-332-2233"
-    - "appoiic 3433234-323-2222"
-    - "appoiic 664-323-4422"
-    - "appoiic 3433234-111-2244"
-    - "appoiic 566-111-2244"
-    - "appoiic 3433234-111-2244"
-    - "appoiic 555-111-2244"
-    - "appoiic 675-111-2244"
-    - "appoiic 3433234-111-2244"
-    - "appoiic 343-111-2244"
-    - "appoiic 089-111-2244"
-    - "appoiic 787-111-2244"
-    - "appoiic 787-111-2244"
-    - "appoiic 676-111-2244"
-    - "appoiic 4664-111-2244"
-    - "appoiic 5654-111-2244"
-    - "appoiic 4543-111-2244"
-    - "appoiic 343-111-2244"
-    - "appoiic 444-111-2244"
-    - "appoiic 556-111-2244"
-- intent: tell_icnum_reschedule
-  examples: |
-    - "reschic 7438874384."
-    - "reschic is 43-434-43434."
-    - "reschic 4343443434."
-    - "12-332-2233"
-    - "reschic 3433234-323-2222"
-    - "reschic 664-323-4422"
-    - "reschic 3433234-111-2244"
-    - "reschic 566-111-2244"
-    - "reschic 3433234-111-2244"
-    - "reschic 555-111-2244"
-    - "reschic 675-111-2244"
-    - "reschic 3433234-111-2244"
-    - "reschic 343-111-2244"
-    - "reschic 089-111-2244"
-    - "reschic 787-111-2244"
-    - "reschic 787-111-2244"
-    - "reschic 676-111-2244"
-    - "reschic 4664-111-2244"
-    - "reschic 5654-111-2244"
-    - "reschic 4543-111-2244"
-    - "reschic 343-111-2244"
-    - "reschic 444-111-2244"
-    - "reschic 556-111-2244"
-- intent: tell_email
-  examples: |
-    - "emaill name@gmail.com."
-    - "emaill name@hotmail.com."
-    - "emaill sabin@opos.com."
-    - "emaill xyz@ymail.com."
-    - "emaill gh@ff.com"
-- intent: tell_symptomp
-  examples: |
-    - symptompp fever.
-    - symptompp Cold.
-    - symptompp Back Pain.
-    - symptompp fever
-- intent: tell_doctor
-  examples: |
-    - "doctorr Dr. Pravash."
-    - "doctorr Dr. Akash"
-    - "doctorr Dr. Pradah"
-    - "doctorr Dr. Haram"
-- intent: tell_scheduledateone
-  examples: |
-    - "scheduleDateonee 01/02/2023 @ 02:12 pm."
-    - "scheduleDateonee 1902-04-26T12:00:00.000Z."
-    - "scheduleDateonee 1981-01-01T12:00:00.000Z."
-    - "15/04/2023 @ 03:12 am."
-    - "scheduleDateonee 1997-04-01T12:00:00.000Z"
-    - "scheduleDateonee 02/04/2023 @ 02:13 pm"
-- intent: tell_scheduledatetwo
-  examples: |
-    - "scheduleDatetwoo 1902-04-26T12:00:00.000Z."
-    - "scheduleDatetwoo 1981-01-01T12:00:00.000Z."
-    - "scheduleDatetwoo 01/02/2023 @ 02:12 pm."
-    - "22/04/2023 @ 05:16 pm."
-    - "scheduleDatetwoo 1997-04-01T12:00:00.000Z"
-    - "scheduleDatetwoo 30/06/2023 @ 12:03 pm"
-- intent: tell_apptId
-  examples: |
-    - "prevapptid AID-20240925-0001."
-    - "prevapptid AID-20250925-0002."
-    - "prevapptid AID-20240926-0010."
-    - "AID-20240915-0002."
-    - "prevapptid AID-20241125-0015"
-    - "prevapptid AID-20240125-0050"
-- intent: tell_apptId_cancel
-  examples: |
-    - "cancelpreaid AID-20240925-0001."
-    - "cancelpreaid AID-20250925-0002."
-    - "cancelpreaid AID-20240926-0010."
-    - "AID-20240915-0002."
-    - "cancelpreaid AID-20241125-0015"
-    - "cancelpreaid AID-20240125-0050"
+    - \d{10,14}
+
 - intent: tell_phone
   examples: |
-    - number is [+01843727741](phone)
-    - My number is [+01843727741](phone)
-    - My phone number is [4637457382](phone)
-    - [33315327130](phone)
-    - [+83283332838](phone)
+    - "+60123456789"
+    - "012-345 6789"
+    - "01123456789"
+    - "+601145678912"
+    - "017-654 3210"
+
+- regex: tell_dob
+  examples: |
+    - dateOfBirth
+
+- regex: tell_dob_two
+  examples: |
+    - dobtwo
+
+- regex: tell_doctor
+  examples: |
+    - preferredDoctor
+
+- regex: tell_email
+  examples: |
+    - emailAddress
+
+- regex: tell_full_name
+  examples: |
+    - fullName
+
+- regex: tell_icnum_cancel
+  examples: |
+    - cancelAppointmentIC
+
+- regex: tell_icnum_appointment
+  examples: |
+    - setAppointmentIC
+
+- regex: tell_icnum_reschedule
+  examples: |
+    - resccheduleAppointment
+
+- regex: tell_name
+  examples: |
+    - userName
+
+- regex: tell_scheduledateone
+  examples: |
+    - scheduleAppointmentDate1
+
+- regex: tell_scheduledatetwo
+  examples: |
+    - scheduleAppointmentDate2
+
+- regex: tell_symptomp
+  examples: |
+    - userSymptoms
+
+- regex: tell_apptId
+  examples: |
+    - previousAppointmentID
+
+- regex: tell_apptId_cancel
+  examples: |
+    - cancelAppointmentID
+
+- intent: tell_name
+  examples: |
+    - userName Ali
+    - userName Siti Aminah
+    - userName Chong Wei
+    - userName Ahmad
+    - userName Tan Li
+    - userName Noor Hisham
+    - userName Ravi
+    - userName Nurul Ain
+    - userName Lee Ming
+    - userName Arif
+    - userName Sarah Tan
+    - userName Ganesh
+    - userName Amira Zulkifli
+    - userName Haris
+    - userName Wong Siu
+    - userName Fatimah
+    - userName Hafiza Karim
+    - userName Lim Jia
+    - userName Raj
+    - userName Zainab
+    - userName Suresh Bala
+    - userName Sharifah
+    - userName Foo Wei
+    - userName Aisyah Khalid
+    - userName Ting Wei
+    - userName Zulkifli Rahman
+    - userName Roslan
+    - userName Cheong Leong
+    - userName Zarina Ali
+    - userName Hafiz
+    - userName Muthu Subra
+    - userName Hishamuddin
+    - userName Priya
+    - userName Jasvinder
+    - userName Teh Hong
+    - userName Faridah
+    - userName Syed Kamal
+    - userName Nadia Hassan
+    - userName Tan Cheng
+    - userName Liew Yi
+    - userName Johan
+    - userName Chong Mei
+    - userName Rosmah
+    - userName Hashim
+    - userName Mahfuz
+    - userName Yong Jia
+    - userName Ramanathan
+    - userName Mohd Faiz
+    - userName Chin Mei
+    - userName Azman
+    - userName Rohana
+
+
+- intent: tell_full_name
+  examples: |
+    - fullName Ena binti Abdullah
+    - fullName Bonni bin Ismail
+    - fullName Kuper a/l Muthu
+    - fullName Kabir bin Hadi
+    - fullName Kiron Mala
+    - fullName Aisyah binti Rahman
+    - fullName Harun bin Ahmad
+    - fullName Priya a/p Rajendran
+    - fullName Suresh A/L Balakrishnan
+    - fullName Noor Hafiza binti Karim
+    - fullName Roslan bin Arif
+    - fullName Fatimah binti Zainal
+    - fullName Lee Ming
+    - fullName Cheong Wei Leong
+    - fullName Arif bin Zulkifli
+    - fullName Nurul Ain binti Hassan
+    - fullName Ravi a/l Kumar
+    - fullName Zainab binti Rosli
+    - fullName Hafiz bin Hashim
+    - fullName Amira binti Johan
+    - fullName Liew Jia Yi
+    - fullName Johan bin Mahfuz
+    - fullName Chong Mei Ling
+    - fullName Ahmad bin Syed
+    - fullName Rosmah binti Ismail
+    - fullName Faridah binti Rahmat
+    - fullName Chin Mei Li
+    - fullName Ganesh A/L Subramaniam
+    - fullName Ting Wei Hui
+    - fullName Mohd Faiz bin Zain
+    - fullName Teh Hong Chuan
+    - fullName Nadia binti Hassan
+    - fullName Hishamuddin bin Kamal
+    - fullName Zarina binti Ali
+    - fullName Wong Siu Ming
+    - fullName Haris bin Mohamad
+    - fullName Foo Wei Shen
+    - fullName Sarah Tan Li Peng
+    - fullName Noor Aminah binti Rahim
+    - fullName Lim Jia Hao
+    - fullName Zulkifli bin Abdul
+    - fullName Ram a/l Govind
+    - fullName Anita A/P Mohan
+    - fullName Hafiza binti Harun
+    - fullName Ahmad bin Hisham
+    - fullName Tan Li Peng
+    - fullName Raj a/l Vijay
+    - fullName Koh Jia Ling
+    - fullName Chong Wei Leong
+
+
+- intent: tell_dob
+  examples: |
+    - dateOfBirth 1987-04-23
+    - dateOfBirth 1992-11-15
+    - dateOfBirth 2001-06-30
+    - dateOfBirth 1975-09-12
+    - dateOfBirth 1963-02-28
+    - dateOfBirth 1999-08-07
+    - dateOfBirth 1983-05-19
+    - dateOfBirth 1978-12-04
+    - dateOfBirth 2005-03-25
+    - dateOfBirth 1957-07-18
+    - dateOfBirth 1996-10-09
+    - dateOfBirth 1981-01-31
+    - dateOfBirth 2003-11-22
+    - dateOfBirth 2010-04-15
+    - dateOfBirth 1968-06-06
+    - dateOfBirth 1993-09-17
+    - dateOfBirth 2008-07-05
+    - dateOfBirth 1972-02-14
+    - dateOfBirth 1989-12-30
+    - dateOfBirth 2015-08-21
+    - dateOfBirth 1997-03-10
+    - dateOfBirth 1961-05-27
+    - dateOfBirth 1954-01-09
+    - dateOfBirth 2000-06-14
+    - dateOfBirth 1976-11-08
+    - dateOfBirth 2012-09-03
+    - dateOfBirth 1984-07-29
+    - dateOfBirth 1990-10-12
+    - dateOfBirth 1959-02-05
+    - dateOfBirth 2007-12-18
+# - "dateOfBirth 2013-12-12T01:00:00.000Z."
+# - "dateOfBirth is 1997-04-01T12:00:00.000Z."
+# - "dateOfBirth 1981-01-01T12:00:00.000Z."
+# - "1996-06-06"
+
+- intent: tell_dob_two
+  examples: |
+    - dateOfBirth2 1987-04-23
+    - dateOfBirth2 1987-04-23
+    - dateOfBirth2 1987-04-23
+    - dateOfBirth2 1992-11-15
+    - dateOfBirth2 2001-06-30
+    - dateOfBirth2 1975-09-12
+    - dateOfBirth2 1963-02-28
+    - dateOfBirth2 1999-08-07
+    - dateOfBirth2 1983-05-19
+    - dateOfBirth2 1978-12-04
+    - dateOfBirth2 2005-03-25
+    - dateOfBirth2 1957-07-18
+    - dateOfBirth2 1996-10-09
+    - dateOfBirth2 1981-01-31
+    - dateOfBirth2 2003-11-22
+    - dateOfBirth2 2010-04-15
+    - dateOfBirth2 1968-06-06
+    - dateOfBirth2 1993-09-17
+    - dateOfBirth2 2008-07-05
+    - dateOfBirth2 1972-02-14
+    - dateOfBirth2 1989-12-30
+    - dateOfBirth2 2015-08-21
+    - dateOfBirth2 1997-03-10
+    - dateOfBirth2 1961-05-27
+    - dateOfBirth2 1954-01-09
+    - dateOfBirth2 2000-06-14
+    - dateOfBirth2 1976-11-08
+    - dateOfBirth2 2012-09-03
+    - dateOfBirth2 1984-07-29
+    - dateOfBirth2 1990-10-12
+    - dateOfBirth2 1959-02-05
+    - dateOfBirth2 2007-12-18
+
+# - "dobtwo 1902-04-26T12:00:00.000Z"
+# - "dobtwo 1902-04-27T12:00:00.000Z"
+# - "dobtwo 1902-04-28T12:00:00.000Z"
+# - "dobtwo 1902-04-29T12:00:00.000Z"
+
+- intent: tell_icnum_cancel
+  examples: |
+    - "cancelAppointmentIC 590804137822"
+    - "cancelAppointmentIC 021103-51-6440" 
+    - "cancelAppointmentIC 301010-42-0264"
+    - "cancelAppointmentIC 141211-51-6562"
+    - "cancelAppointmentIC 851002-39-2417"
+    - "cancelAppointmentIC 270712268796" 
+    - "cancelAppointmentIC 280926269791"
+    - "cancelAppointmentIC 310426-03-6012" 
+    - "cancelAppointmentIC 531217-54-1976"
+    - "cancelAppointmentIC 610214-56-7898"
+    - "cancelAppointmentIC 530721333979" 
+    - "cancelAppointmentIC 750121034144"
+    - "cancelAppointmentIC 020814-17-9915" 
+    - "cancelAppointmentIC 611226-25-3895"
+    - "cancelAppointmentIC 290102070925"
+    - "cancelAppointmentIC 770708-32-4486" 
+    - "cancelAppointmentIC 121114571923"
+    - "cancelAppointmentIC 230220180952" 
+    - "cancelAppointmentIC 521006160527"
+    - "cancelAppointmentIC 650718-23-2054"
+    - "cancelAppointmentIC 730525-43-3050" 
+    - "cancelAppointmentIC 600919-45-6388"
+    - "cancelAppointmentIC 580512-15-4571" 
+    - "cancelAppointmentIC 950917-05-7295"
+    - "cancelAppointmentIC 481225-53-2422"
+    - "cancelAppointmentIC 480121194791" 
+    - "cancelAppointmentIC 500812183046"
+    - "cancelAppointmentIC 711001-02-1386" 
+    - "cancelAppointmentIC 751214-23-9471"
+    - "cancelAppointmentIC 830303-58-5753"
+    - "cancelAppointmentIC 060424-57-4963" 
+    - "cancelAppointmentIC 370810-38-5733"
+    - "cancelAppointmentIC 800816-25-1816" 
+    - "cancelAppointmentIC 390915-50-6221"
+    - "cancelAppointmentIC 340807-14-0031"
+    - "cancelAppointmentIC 590819-58-6655" 
+    - "cancelAppointmentIC 790604-19-6121"
+    - "cancelAppointmentIC 161218-30-3458" 
+    - "cancelAppointmentIC 981015-43-1821"
+    - "cancelAppointmentIC 910327312683"
+    - "cancelAppointmentIC 800401-29-5678" 
+    - "cancelAppointmentIC 680308-36-7501"
+    - "cancelAppointmentIC 570702-14-2847" 
+    - "cancelAppointmentIC 810712213602"
+    - "cancelAppointmentIC 710628078068"
+
+
+- intent: tell_icnum_appointment
+  examples: |
+    - "setAppointmentIC 590804137822"
+    - "setAppointmentIC 021103-51-6440" 
+    - "setAppointmentIC 301010-42-0264"
+    - "setAppointmentIC 141211-51-6562"
+    - "setAppointmentIC 851002-39-2417"
+    - "setAppointmentIC 270712268796" 
+    - "setAppointmentIC 280926269791"
+    - "setAppointmentIC 310426-03-6012" 
+    - "setAppointmentIC 531217-54-1976"
+    - "setAppointmentIC 610214-56-7898"
+    - "setAppointmentIC 530721333979" 
+    - "setAppointmentIC 750121034144"
+    - "setAppointmentIC 020814-17-9915" 
+    - "setAppointmentIC 611226-25-3895"
+    - "setAppointmentIC 290102070925"
+    - "setAppointmentIC 770708-32-4486" 
+    - "setAppointmentIC 121114571923"
+    - "setAppointmentIC 230220180952" 
+    - "setAppointmentIC 521006160527"
+    - "setAppointmentIC 650718-23-2054"
+    - "setAppointmentIC 730525-43-3050" 
+    - "setAppointmentIC 600919-45-6388"
+    - "setAppointmentIC 580512-15-4571" 
+    - "setAppointmentIC 950917-05-7295"
+    - "setAppointmentIC 481225-53-2422"
+    - "setAppointmentIC 480121194791" 
+    - "setAppointmentIC 500812183046"
+    - "setAppointmentIC 711001-02-1386" 
+    - "setAppointmentIC 751214-23-9471"
+    - "setAppointmentIC 830303-58-5753"
+    - "setAppointmentIC 060424-57-4963" 
+    - "setAppointmentIC 370810-38-5733"
+    - "setAppointmentIC 800816-25-1816" 
+    - "setAppointmentIC 390915-50-6221"
+    - "setAppointmentIC 340807-14-0031"
+    - "setAppointmentIC 590819-58-6655" 
+    - "setAppointmentIC 790604-19-6121"
+    - "setAppointmentIC 161218-30-3458" 
+    - "setAppointmentIC 981015-43-1821"
+    - "setAppointmentIC 910327312683"
+    - "setAppointmentIC 800401-29-5678" 
+    - "setAppointmentIC 680308-36-7501"
+    - "setAppointmentIC 570702-14-2847" 
+    - "setAppointmentIC 810712213602"
+    - "setAppointmentIC 710628078068"
+
+- intent: tell_icnum_reschedule
+  examples: |
+    - "rescheduleAppointmentIC 590804137822"
+    - "rescheduleAppointmentIC 021103-51-6440" 
+    - "rescheduleAppointmentIC 301010-42-0264"
+    - "rescheduleAppointmentIC 141211-51-6562"
+    - "rescheduleAppointmentIC 851002-39-2417"
+    - "rescheduleAppointmentIC 270712268796" 
+    - "rescheduleAppointmentIC 280926269791"
+    - "rescheduleAppointmentIC 310426-03-6012" 
+    - "rescheduleAppointmentIC 531217-54-1976"
+    - "rescheduleAppointmentIC 610214-56-7898"
+    - "rescheduleAppointmentIC 530721333979" 
+    - "rescheduleAppointmentIC 750121034144"
+    - "rescheduleAppointmentIC 020814-17-9915" 
+    - "rescheduleAppointmentIC 611226-25-3895"
+    - "rescheduleAppointmentIC 290102070925"
+    - "rescheduleAppointmentIC 770708-32-4486" 
+    - "rescheduleAppointmentIC 121114571923"
+    - "rescheduleAppointmentIC 230220180952" 
+    - "rescheduleAppointmentIC 521006160527"
+    - "rescheduleAppointmentIC 650718-23-2054"
+    - "rescheduleAppointmentIC 730525-43-3050" 
+    - "rescheduleAppointmentIC 600919-45-6388"
+    - "rescheduleAppointmentIC 580512-15-4571" 
+    - "rescheduleAppointmentIC 950917-05-7295"
+    - "rescheduleAppointmentIC 481225-53-2422"
+    - "rescheduleAppointmentIC 480121194791" 
+    - "rescheduleAppointmentIC 500812183046"
+    - "rescheduleAppointmentIC 711001-02-1386" 
+    - "rescheduleAppointmentIC 751214-23-9471"
+    - "rescheduleAppointmentIC 830303-58-5753"
+    - "rescheduleAppointmentIC 060424-57-4963" 
+    - "rescheduleAppointmentIC 370810-38-5733"
+    - "rescheduleAppointmentIC 800816-25-1816" 
+    - "rescheduleAppointmentIC 390915-50-6221"
+    - "rescheduleAppointmentIC 340807-14-0031"
+    - "rescheduleAppointmentIC 590819-58-6655" 
+    - "rescheduleAppointmentIC 790604-19-6121"
+    - "rescheduleAppointmentIC 161218-30-3458" 
+    - "rescheduleAppointmentIC 981015-43-1821"
+    - "rescheduleAppointmentIC 910327312683"
+    - "rescheduleAppointmentIC 800401-29-5678" 
+
+
+
+- intent: tell_email
+  examples: |
+    - "emailAddress kcnjtsjm@gmail.com"
+    - "emailAddress bndrmwxo@yahoo.com"
+    - "emailAddress xvvclrzv@hotmail.com"
+    - "emailAddress mzsmxyit@outlook.com"
+    - "emailAddress dyxszjhq@icloud.com"
+    - "emailAddress ltwpovkj@gmail.com"
+    - "emailAddress hrqkbbsw@yahoo.com"
+    - "emailAddress akwpqjiy@hotmail.com"
+    - "emailAddress bdcmkdzo@outlook.com"
+    - "emailAddress gqaybllc@icloud.com"
+    - "emailAddress snufshda@gmail.com"
+    - "emailAddress vpshvams@yahoo.com"
+    - "emailAddress gkfnrgqi@hotmail.com"
+    - "emailAddress bzklhptw@outlook.com"
+    - "emailAddress jofdlkhy@icloud.com"
+    - "emailAddress ajfgwqwz@gmail.com"
+    - "emailAddress lgrmlkuh@yahoo.com"
+    - "emailAddress ozrbsihq@hotmail.com"
+    - "emailAddress pnwzgfkm@outlook.com"
+    - "emailAddress bchygqkc@icloud.com"
+    - "emailAddress wdlsvzqp@gmail.com"
+    - "emailAddress rujzftow@yahoo.com"
+    - "emailAddress kphadfzb@hotmail.com"
+    - "emailAddress mzcgekwj@outlook.com"
+    - "emailAddress kptsjvxh@icloud.com"
+    - "emailAddress xlzqbzsa@gmail.com"
+    - "emailAddress mytjhmbu@yahoo.com"
+    - "emailAddress fzqoxvsw@hotmail.com"
+    - "emailAddress gdczlhrm@outlook.com"
+    - "emailAddress nxdmfsxu@icloud.com"
+    - "emailAddress wfllqksy@gmail.com"
+    - "emailAddress yaxmtjgs@yahoo.com"
+    - "emailAddress fizdhmvq@hotmail.com"
+    - "emailAddress rtzqakgk@outlook.com"
+    - "emailAddress vlbwftkj@icloud.com"
+    - "emailAddress fuwrntlo@gmail.com"
+    - "emailAddress bdqlpnew@yahoo.com"
+    - "emailAddress znxgqbti@hotmail.com"
+    - "emailAddress vfnifpvl@outlook.com"
+    - "emailAddress mzkqzixg@icloud.com"
+    - "emailAddress lgpwtllj@gmail.com"
+    - "emailAddress dbmsolpg@yahoo.com"
+    - "emailAddress koxgmlas@hotmail.com"
+    - "emailAddress wdjndsnr@outlook.com"
+    - "emailAddress ypxnkfqa@icloud.com"
+    - "emailAddress fdxxzjwz@gmail.com"
+    - "emailAddress hpxqjybq@yahoo.com"
+    - "emailAddress rxzgftab@hotmail.com"
+    - "emailAddress jfqtsoln@outlook.com"
+    - "emailAddress yzqpfvbx@icloud.com"
+    - "emailAddress gdyxfhzq@gmail.com"
+    - "emailAddress dtmhylqa@yahoo.com"
+    - "emailAddress fsyjpwjw@hotmail.com"
+
+- intent: tell_symptomp
+  examples: |
+    - "userSymptoms fever"
+    - "userSymptoms cough, sore throat, mild headache"
+    - "userSymptoms runny nose, watery eyes, sneezing"
+    - "userSymptoms sore throat with difficulty swallowing"
+    - "userSymptoms mild fever, chills, body ache"
+    - "userSymptoms high temperature, fatigue"
+    - "userSymptoms nausea, vomiting, stomach cramps"
+    - "userSymptoms sore joints, redness on skin"
+    - "userSymptoms broken toe, swelling in foot"
+    - "userSymptoms sprained wrist with minor bruising"
+    - "userSymptoms flu-like symptoms, fatigue, headache"
+    - "userSymptoms severe headache, dizziness, nausea"
+    - "userSymptoms cough, runny nose, mild fever"
+    - "userSymptoms pain in lower back and joints"
+    - "userSymptoms itchy skin with red rashes"
+    - "userSymptoms stuffy nose, sinus pressure"
+    - "userSymptoms mild fever, tiredness"
+    - "userSymptoms difficulty breathing, chest tightness"
+    - "userSymptoms burning sensation while urinating"
+    - "userSymptoms stiff neck with headache"
+    - "userSymptoms broken finger, pain in arm"
+    - "userSymptoms bruised knee, swelling"
+    - "userSymptoms sneezing, nasal congestion"
+    - "userSymptoms fever, chills, sweating"
+    - "userSymptoms red, itchy eyes"
+    - "userSymptoms sharp pain in the abdomen"
+    - "userSymptoms toothache, swollen gums"
+    - "userSymptoms mild fever, shivering"
+    - "userSymptoms coughing with phlegm"
+    - "userSymptoms fatigue, general weakness"
+    - "userSymptoms swollen ankle, difficulty walking"
+    - "userSymptoms pain in wrist and fingers"
+    - "userSymptoms broken arm, severe pain"
+    - "userSymptoms runny nose, sore throat"
+    - "userSymptoms rash on face and arms"
+    - "userSymptoms flu, chills, muscle ache"
+    - "userSymptoms skin irritation, dryness"
+    - "userSymptoms stomach pain, bloating"
+    - "userSymptoms headache, nausea, sensitivity to light"
+    - "userSymptoms ear pain, ringing in ears"
+    - "userSymptoms pain in shoulder, stiffness"
+    - "userSymptoms swollen glands, sore throat"
+    - "userSymptoms shortness of breath, dizziness"
+    - "userSymptoms flu-like symptoms, mild temperature"
+    - "userSymptoms broken collarbone, limited arm movement"
+    - "userSymptoms sprained ankle, bruised toes"
+    - "userSymptoms pain in the lower abdomen"
+    - "userSymptoms fever, loss of appetite"
+    - "userSymptoms persistent dry cough"
+    - "userSymptoms sore joints, difficulty moving"
+    - "userSymptoms red patches on skin, itching"
+    - "userSymptoms high fever, dehydration"
+    - "userSymptoms stuffy nose, sneezing"
+    - "userSymptoms pain in chest when breathing"
+    - "userSymptoms rash on back and legs"
+    - "userSymptoms sprained wrist, swelling"
+    - "userSymptoms broken rib, difficulty breathing"
+    - "userSymptoms cough with sore throat"
+    - "userSymptoms nausea, mild fever, headache"
+    - "userSymptoms mild temperature, runny nose"
+    - "userSymptoms bruised elbow, swelling"
+    - "userSymptoms itching around eyes, red patches"
+    - "userSymptoms burning sensation in throat"
+    - "userSymptoms broken thumb, swelling"
+    - "userSymptoms joint pain, mild fever"
+    - "userSymptoms sharp pain in side"
+    - "userSymptoms stiffness in neck and shoulders"
+    - "userSymptoms earache, mild hearing loss"
+    - "userSymptoms runny nose, sneezing, cough"
+    - "userSymptoms rash with peeling skin"
+    - "userSymptoms pain in the lower back"
+    - "userSymptoms chills, fever, body ache"
+    - "userSymptoms difficulty moving arm, swelling"
+    - "userSymptoms sore throat, mild fever"
+    - "userSymptoms headache, nausea, fatigue"
+    - "userSymptoms pain in ankle, slight swelling"
+    - "userSymptoms burns on hand, redness"
+    - "userSymptoms sharp pain in chest"
+    - "userSymptoms rash on neck and arms"
+    - "userSymptoms flu, fatigue, mild fever"
+
+    
+- intent: tell_doctor
+  examples: |
+    - "preferredDoctor Dr. Aida Khalid"
+    - "preferredDoctor Dr. Benjamin Tan"
+    - "preferredDoctor Doctor Clara Lee"
+    - "preferredDoctor dr Daniel Wong"
+    - "preferredDoctor Dr. Emily Chan"
+    - "preferredDoctor Dr. Faridah Ismail"
+    - "preferredDoctor Doctor George Lim"
+    - "preferredDoctor Doctor Hannah Cheong"
+    - "preferredDoctor Dr. Ian Goh"
+    - "preferredDoctor Dr. Jasmine Teoh"
+    - "preferredDoctor Dr. Kamal Arif"
+    - "preferredDoctor Doctor Lydia Chong"
+    - "preferredDoctor Dr. Michael Ong"
+    - "preferredDoctor Dr. Nabila Rahman"
+    - "preferredDoctor Dr. Oliver Tan"
+    - "preferredDoctor dr Priya Subramaniam"
+    - "preferredDoctor Doctor Quentin Low"
+    - "preferredDoctor Dr. Rachael Lau"
+    - "preferredDoctor Dr. Samuel Koh"
+    - "preferredDoctor Dr. Thivya Rajah"
+    - "preferredDoctor Dr. Umar Hafiz"
+    - "preferredDoctor Dr. Valerie Lim"
+    - "preferredDoctor Doctor William Chan"
+    - "preferredDoctor Dr. Yasmin Azmi"
+    - "preferredDoctor Dr. Zahir Ali"
+    - "preferredDoctor Dr. Adrian Ng"
+    - "preferredDoctor dr Bella Yong"
+    - "preferredDoctor Dr. Christopher Tan"
+    - "preferredDoctor Dr. Devi Nair"
+    - "preferredDoctor Dr. Ethan Cheng"
+    - "preferredDoctor Dr. Fiona Tan"
+    - "preferredDoctor Dr. Ganesh Kumar"
+
+
+
+- intent: tell_scheduledateone
+  examples: |
+    - "scheduleAppointmentDate1 2024-03-05T10:00:00.000Z"
+    - "scheduleAppointmentDate1 2024-07-18T14:30:00.000Z"
+    - "scheduleAppointmentDate1 2025-01-01T09:45:00.000Z"
+    - "scheduleAppointmentDate1 2030-12-31T23:59:00.000Z"
+    - "scheduleAppointmentDate1 2023-06-15T16:00:00.000Z"
+    - "scheduleAppointmentDate1 2025-02-28T08:15:00.000Z"
+    - "scheduleAppointmentDate1 2024-11-12T13:45:00.000Z"
+    - "scheduleAppointmentDate1 1999-09-09T09:09:09.000Z"
+    - "scheduleAppointmentDate1 2023-05-10T11:30:00.000Z"
+    - "scheduleAppointmentDate1 1985-07-04T17:00:00.000Z"
+    - "scheduleAppointmentDate1 2024-03-23T18:45:00.000Z"
+    - "scheduleAppointmentDate1 2026-08-15T20:00:00.000Z"
+    - "scheduleAppointmentDate1 2027-07-07T14:00:00.000Z"
+    - "scheduleAppointmentDate1 2040-01-01T12:00:00.000Z"
+    - "scheduleAppointmentDate1 2025-09-05T07:00:00.000Z"
+    - "scheduleAppointmentDate1 2000-01-01T00:00:00.000Z"
+    - "scheduleAppointmentDate1 2023-12-08T17:30:00.000Z"
+    - "scheduleAppointmentDate1 2015-03-10T09:00:00.000Z"
+    - "scheduleAppointmentDate1 2026-06-06T08:15:00.000Z"
+    - "scheduleAppointmentDate1 2077-07-07T07:07:07.000Z"
+    - "scheduleAppointmentDate1 2023-12-25T15:00:00.000Z"
+    - "scheduleAppointmentDate1 2029-04-05T16:45:00.000Z"
+    - "scheduleAppointmentDate1 2024-11-11T11:11:00.000Z"
+    - "scheduleAppointmentDate1 2001-09-11T08:46:00.000Z"
+    - "scheduleAppointmentDate1 2025-02-14T20:00:00.000Z"
+    - "scheduleAppointmentDate1 2012-12-21T21:12:00.000Z"
+    - "scheduleAppointmentDate1 2028-07-18T10:30:00.000Z"
+    - "scheduleAppointmentDate1 1995-10-15T13:00:00.000Z"
+    - "scheduleAppointmentDate1 2031-01-31T19:30:00.000Z"
+    - "scheduleAppointmentDate1 2023-05-20T06:00:00.000Z"
+
+
+- intent: tell_scheduledatetwo
+  examples: |
+    - "scheduleAppointmentDate2 2024-03-05T10:00:00.000Z"
+    - "scheduleAppointmentDate2 2024-07-18T14:30:00.000Z"
+    - "scheduleAppointmentDate2 2025-01-01T09:45:00.000Z"
+    - "scheduleAppointmentDate2 2030-12-31T23:59:00.000Z"
+    - "scheduleAppointmentDate2 2023-06-15T16:00:00.000Z"
+    - "scheduleAppointmentDate2 2025-02-28T08:15:00.000Z"
+    - "scheduleAppointmentDate2 2024-11-12T13:45:00.000Z"
+    - "scheduleAppointmentDate2 1999-09-09T09:09:09.000Z"
+    - "scheduleAppointmentDate2 2023-05-10T11:30:00.000Z"
+    - "scheduleAppointmentDate2 1985-07-04T17:00:00.000Z"
+    - "scheduleAppointmentDate2 2024-03-23T18:45:00.000Z"
+    - "scheduleAppointmentDate2 2026-08-15T20:00:00.000Z"
+    - "scheduleAppointmentDate2 2027-07-07T14:00:00.000Z"
+    - "scheduleAppointmentDate2 2040-01-01T12:00:00.000Z"
+    - "scheduleAppointmentDate2 2025-09-05T07:00:00.000Z"
+    - "scheduleAppointmentDate2 2000-01-01T00:00:00.000Z"
+    - "scheduleAppointmentDate2 2023-12-08T17:30:00.000Z"
+    - "scheduleAppointmentDate2 2015-03-10T09:00:00.000Z"
+    - "scheduleAppointmentDate2 2026-06-06T08:15:00.000Z"
+    - "scheduleAppointmentDate2 2077-07-07T07:07:07.000Z"
+    - "scheduleAppointmentDate2 2023-12-25T15:00:00.000Z"
+    - "scheduleAppointmentDate2 2029-04-05T16:45:00.000Z"
+    - "scheduleAppointmentDate2 2024-11-11T11:11:00.000Z"
+    - "scheduleAppointmentDate2 2001-09-11T08:46:00.000Z"
+    - "scheduleAppointmentDate2 2025-02-14T20:00:00.000Z"
+    - "scheduleAppointmentDate2 2012-12-21T21:12:00.000Z"
+    - "scheduleAppointmentDate2 2028-07-18T10:30:00.000Z"
+    - "scheduleAppointmentDate2 1995-10-15T13:00:00.000Z"
+    - "scheduleAppointmentDate2 2031-01-31T19:30:00.000Z"
+    - "scheduleAppointmentDate2 2023-05-20T06:00:00.000Z"
+
+
+- intent: tell_apptId
+  examples: |
+    - "previousAppointmentID AID-20240925-0001."
+    - "previousAppointmentID AID-20250925-0002."
+    - "previousAppointmentID AID-20240926-0010."
+    - "previousAppointmentID AID-20240915-0002."
+    - "previousAppointmentID AID-20241125-0015"
+    - "previousAppointmentID AID-20240125-0050"
+    - "previousAppointmentID AID-20250122-0001."
+    - "previousAppointmentID AID-20250204-0194."
+    - "previousAppointmentID AID-20240402-0382."
+    - "previousAppointmentID AID-20241225-0042."
+    - "previousAppointmentID AID-20250626-0014"
+    - "previousAppointmentID AID-20240330-1203"
+
+
+- intent: tell_apptId_cancel·
+  examples: |
+    - "cancelPreviousAppointmentID AID-20240925-0001."
+    - "cancelPreviousAppointmentID AID-20250925-0002."
+    - "cancelPreviousAppointmentID AID-20240926-0010."
+    - "cancelPreviousAppointmentID AID-20240915-0002."
+    - "cancelPreviousAppointmentID AID-20241125-0015"
+    - "cancelPreviousAppointmentID AID-20240125-0050"
+    - "cancelPreviousAppointmentID AID-20250122-0001."
+    - "cancelPreviousAppointmentID AID-20250204-0194."
+    - "cancelPreviousAppointmentID AID-20240402-0382."
+    - "cancelPreviousAppointmentID AID-20241225-0042."
+    - "cancelPreviousAppointmentID AID-20250626-0014"
+    - "cancelPreviousAppointmentID AID-20240330-1203"
+
+- intent: tell_phone
+  examples: |
+    - [+60123456789](phone)
+    - [012-345 6789](phone)
+    - [01123456789](phone)
+    - [+601145678912](phone)
+    - [017-654 3210](phone)
+    - [0198765432](phone)
+    - [+60197865432](phone)
+    - [012-876 5432](phone)
+    - [01112345678](phone)
+    - [+601234567890](phone)
+    - [016-345 9876](phone)
+    - [0187654321](phone)
+    - [+60129876543](phone)
+    - [012-765 4321](phone)
+    - [0143456789](phone)
+    - [+60146789012](phone)
+    - [017-567 8901](phone)
+    - [0186543210](phone)
+    - [+601198765432](phone)
+    - [016-876 5432](phone)
+    - [0198765432](phone)
+    - [+60197865432](phone)
+    - [012-876 5432](phone)
+    - [01112345678](phone)
+    - [+601234567890](phone)
+
+  # - number is [+01843727741](phone)
+  # - My number is [+01843727741](phone)
+  # - My phone number is [4637457382](phone)
+  # - [33315327130](phone)
+  # - [+83283332838](phone)
+
+    
 - intent: tell_gender
   examples: |
-    - [male](gender).
-    - [others](gender).
-    - [female](gender).
+    - [male](gender)
+    - [female](gender)
     - [others](gender)
+
+
 - intent: tell_nationality
   examples: |
     - [malaysian](nationality).
     - [foreigner](nationality).
+
+
 - intent: tell_nationality_two
   examples: |
     - ntwo [malaysian](nationality).
     - ntwo [foreigner](nationality).
+
+
 - intent: goodbye
   examples: |
     - cu
@@ -201,6 +760,8 @@ nlu:
     - see you around
     - bye bye
     - see you later
+
+
 - intent: affirm
   examples: |
     - yes
@@ -210,30 +771,56 @@ nlu:
     - of course
     - that sounds good
     - correct
+
+
 - intent: deny
   examples: |
-    - none
-    - no thank you
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-    - it is not correct
-    - na
+   - none
+   - no thank you
+   - never
+   - I don't think so
+   - don't like that
+   - no way
+   - not really
+   - it is not correct
+   - na
+   - nope
+   - absolutely not
+   - not at all
+   - not interested
+
 - intent: personal_data_not_share
   examples: |
-    - I'm not comfortable sharing that information. 
-    - I prefer to keep that information private. 
-    - I'd rather not disclose that information. 
-    - I'm not inclined to provide that information. 
-    - I’d like to keep that information to myself. 
+    - I'm not comfortable sharing that information.
+    - I prefer to keep that information private.
+    - I'd rather not disclose that information.
+    - I'm not inclined to provide that information.
+    - I'd like to keep that information to myself.
+    - That's personal, and I'd prefer not to share.
+    - I'd rather not talk about that.
+    - I'm sorry, but I can't share that information.
+    - I don't feel comfortable providing those details.
+    - That's private, and I'd prefer to keep it that way.
+    - I'm not at liberty to share that information.
+    - I don't wish to discuss that.
+    - I'll keep that to myself, thank you.
+    - I'm sorry, but that's confidential.
+    - I'd rather keep that undisclosed.
+    - That's something I'd like to keep private.
+    - I choose not to reveal that information.
+    - I'm not ready to share that yet.
+    - Let's not delve into that.
+    - I'd prefer not to answer that.
+
+    
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+    
 - intent: human_handoff
   examples: |
     - i am confused
@@ -297,48 +884,37 @@ nlu:
     - let me speak to a real person please
     - I would not like to share that information
     - can not.
-- regex: phone
-  examples: |
-    - \d{10,14}
-- regex: tell_dob
-  examples: |
-    - dateOfBirth
-- regex: tell_dob_two
-  examples: |
-    - dobtwo
-- regex: tell_doctor
-  examples: |
-    - doctorr
-- regex: tell_email
-  examples: |
-    - emaill
-- regex: tell_full_name
-  examples: |
-    - fullname
-- regex: tell_icnum_cancel
-  examples: |
-    - icnumber
-- regex: tell_icnum_appointment
-  examples: |
-    - appoiic
-- regex: tell_icnum_reschedule
-  examples: |
-    - reschic
-- regex: tell_name
-  examples: |
-    - namehide
-- regex: tell_scheduledateone
-  examples: |
-    - scheduleDateonee
-- regex: tell_scheduledatetwo
-  examples: |
-    - scheduleDatetwoo
-- regex: tell_symptomp
-  examples: |
-    - symptompp
-- regex: tell_apptId
-  examples: |
-    - prevapptid
-- regex: tell_apptId_cancel
-  examples: |
-    - cancelpreaid
+    - please transfer me to someone in customer support
+    - I need human help for this
+    - is there a live agent available?
+    - help me talk to someone from your company
+    - This is not working, can I talk to a person?
+    - I prefer speaking with someone real
+    - can you escalate this to a human?
+    - How do I reach a real person?
+    - I want assistance from a live agent
+    - is there a way to talk to someone in your office?
+    - I don’t trust bots, I need a human
+    - let me contact a representative
+    - Can I be transferred to someone real?
+    - I’d like to communicate with a real person
+    - Where is the human assistance option?
+    - who can I speak to directly?
+    - I prefer to discuss this with an actual person
+    - put me in touch with your staff
+    - I need help from someone knowledgeable
+    - this requires human expertise
+    - Please, a real person now
+    - enough with the bot, let me talk to someone
+    - I don’t have time for this, get me a human
+    - can I speak with a live agent?
+    - How do I bypass this bot to reach support?
+    - I need customer care urgently
+    - this isn’t solving my problem, human help please
+    - I’m fed up with this, where’s a real person?
+    - let me connect to someone who can solve this
+    - is this a bot? I want to talk to a person
+    - Please let me deal with a human representative
+    - this isn’t working, transfer me to a human!
+
+
