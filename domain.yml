@@ -215,7 +215,7 @@ responses:
   - text: Please provide your phone number. (Please include country code prefix e.g. +60)
 
   utter_ask_doctor:
-  - text: "Do you have a preferred doctor? If yes, please provide doctor's name."
+  - text: "Do you have a preferred doctor? If yes, please provide doctor's name, else type no"
 
   utter_ask_symptomp:
   - text: Could you please provide some information about your medical condition or how you currently feel?
